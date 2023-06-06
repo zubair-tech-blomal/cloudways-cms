@@ -7,13 +7,13 @@ use App\Helpers\UploadHelper;
 use App\Http\Controllers\Controller;
 use App\Models\Track;
 use Illuminate\Http\Request;
-use App\Models\Blog;
+use App\Models\Faq;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\Facades\DataTables;
 
-class BlogsController extends Controller
+class FaqsController extends Controller
 {
     public $user;
 
@@ -39,11 +39,11 @@ class BlogsController extends Controller
 
         if (request()->ajax()) {
             if ($isTrashed) {
-                $blogs = Blog::orderBy('id', 'desc')
+                $blogs = Faq::orderBy('id', 'desc')
                     ->where('status', 0)
                     ->get();
             } else {
-                $blogs = Blog::orderBy('id', 'desc')
+                $blogs = Faq::orderBy('id', 'desc')
                     ->where('deleted_at', null)
                     ->where('status', 1)
                     ->get();
@@ -57,20 +57,20 @@ class BlogsController extends Controller
                         $csrf = "" . csrf_field() . "";
                         $method_delete = "" . method_field("delete") . "";
                         $method_put = "" . method_field("put") . "";
-                        $html = '<a class="btn waves-effect waves-light btn-info btn-sm btn-circle" title="View Blog Details" href="' . route('admin.blogs.show', $row->id) . '"><i class="fa fa-eye"></i></a>';
+                        $html = '<a class="btn waves-effect waves-light btn-info btn-sm btn-circle" title="View Blog Details" href="' . route('admin.faqs.show', $row->id) . '"><i class="fa fa-eye"></i></a>';
 
                         if ($row->deleted_at === null) {
-                            $deleteRoute =  route('admin.blogs.destroy', [$row->id]);
+                            $deleteRoute =  route('admin.faqs.destroy', [$row->id]);
                             if ($this->user->can('blog.edit')) {
-                                $html .= '<a class="btn waves-effect waves-light btn-success btn-sm btn-circle ml-1 " title="Edit Blog Details" href="' . route('admin.blogs.edit', $row->id) . '"><i class="fa fa-edit"></i></a>';
+                                $html .= '<a class="btn waves-effect waves-light btn-success btn-sm btn-circle ml-1 " title="Edit Blog Details" href="' . route('admin.faqs.edit', $row->id) . '"><i class="fa fa-edit"></i></a>';
                             }
                             if ($this->user->can('blog.delete')) {
                                 $html .= '<a class="btn waves-effect waves-light btn-danger btn-sm btn-circle ml-1 text-white" title="Delete Admin" id="deleteItem' . $row->id . '"><i class="fa fa-trash"></i></a>';
                             }
                         } else {
                             if ($this->user->can('blog.delete')) {
-                                $deleteRoute =  route('admin.blogs.trashed.destroy', [$row->id]);
-                                $revertRoute = route('admin.blogs.trashed.revert', [$row->id]);
+                                $deleteRoute =  route('admin.faqs.trashed.destroy', [$row->id]);
+                                $revertRoute = route('admin.faqs.trashed.revert', [$row->id]);
 
                                 $html .= '<a class="btn waves-effect waves-light btn-warning btn-sm btn-circle ml-1" title="Revert Back" id="revertItem' . $row->id . '"><i class="fa fa-check"></i></a>';
                                 $html .= '
@@ -87,21 +87,21 @@ class BlogsController extends Controller
                         if ($this->user->can('blog.delete')) {
                             $html .= '<script>
                             $("#deleteItem' . $row->id . '").click(function(){
-                                swal.fire({ title: "Are you sure?",text: "Blog will be deleted as trashed !",type: "warning",showCancelButton: true,confirmButtonColor: "#DD6B55",confirmButtonText: "Yes, delete it!"
+                                swal.fire({ title: "Are you sure?",text: "Faq will be deleted as trashed !",type: "warning",showCancelButton: true,confirmButtonColor: "#DD6B55",confirmButtonText: "Yes, delete it!"
                                 }).then((result) => { if (result.value) {$("#deleteForm' . $row->id . '").submit();}})
                             });
                         </script>';
 
                             $html .= '<script>
                             $("#deleteItemPermanent' . $row->id . '").click(function(){
-                                swal.fire({ title: "Are you sure?",text: "Blog will be deleted permanently, both from trash !",type: "warning",showCancelButton: true,confirmButtonColor: "#DD6B55",confirmButtonText: "Yes, delete it!"
+                                swal.fire({ title: "Are you sure?",text: "Faq will be deleted permanently, both from trash !",type: "warning",showCancelButton: true,confirmButtonColor: "#DD6B55",confirmButtonText: "Yes, delete it!"
                                 }).then((result) => { if (result.value) {$("#deletePermanentForm' . $row->id . '").submit();}})
                             });
                         </script>';
 
                             $html .= '<script>
                             $("#revertItem' . $row->id . '").click(function(){
-                                swal.fire({ title: "Are you sure?",text: "Blog will be revert back from trash !",type: "warning",showCancelButton: true,confirmButtonColor: "#DD6B55",confirmButtonText: "Yes, Revert Back!"
+                                swal.fire({ title: "Are you sure?",text: "Faq will be revert back from trash !",type: "warning",showCancelButton: true,confirmButtonColor: "#DD6B55",confirmButtonText: "Yes, Revert Back!"
                                 }).then((result) => { if (result.value) {$("#revertForm' . $row->id . '").submit();}})
                             });
                         </script>';
@@ -149,9 +149,9 @@ class BlogsController extends Controller
                 ->make(true);
         }
 
-        $count_blogs = count(Blog::select('id')->get());
-        $count_active_blogs = count(Blog::select('id')->where('status', 1)->get());
-        $count_trashed_blogs = count(Blog::select('id')->where('deleted_at', '!=', null)->get());
+        $count_blogs = count(Faq::select('id')->get());
+        $count_active_blogs = count(Faq::select('id')->where('status', 1)->get());
+        $count_trashed_blogs = count(Faq::select('id')->where('deleted_at', '!=', null)->get());
         return view('backend.pages.blogs.index', compact('count_blogs', 'count_active_blogs', 'count_trashed_blogs'));
     }
 
@@ -182,38 +182,36 @@ class BlogsController extends Controller
         }
 
         $request->validate([
-            'title'  => 'required|max:100',
+            // 'title'  => 'required|max:100',
             'slug'  => 'nullable|max:100|unique:pages,slug',
             'image'  => 'nullable|image'
         ]);
 
         try {
             DB::beginTransaction();
-            $blog = new Blog();
-            $blog->title = $request->title;
+            $faq = new Faq();
+            $faq->question_en = $request->question_en;
+            $faq->answer_en = $request->answer_en;
+            $faq->question_ar = $request->question_ar;
+            $faq->answer_ar = $request->answer_ar;
 
             if ($request->slug) {
-                $blog->slug = $request->slug;
+                $faq->slug = $request->slug;
             } else {
-                $blog->slug = StringHelper::createSlug($request->title, 'Blog', 'slug', '');
+                $faq->slug = StringHelper::createSlug($request->question_en, 'Faq', 'slug', '');
             }
 
-            if (!is_null($request->image)) {
-                $blog->image = UploadHelper::upload('image', $request->image, $request->title . '-' . time() . '-logo', 'public/assets/images/blogs');
-            }
+           
+            $faq->status = $request->status;
+            $faq->created_at = Carbon::now();
+            $faq->created_by = Auth::id();
+            $faq->updated_at = Carbon::now();
+            $faq->save();
 
-            $blog->status = $request->status;
-            $blog->description = $request->description;
-            $blog->meta_description = $request->meta_description;
-            $blog->created_at = Carbon::now();
-            $blog->created_by = Auth::id();
-            $blog->updated_at = Carbon::now();
-            $blog->save();
-
-            Track::newTrack($blog->title, 'New Blog has been created');
+            Track::newTrack($faq->question_en, 'New Faq has been created');
             DB::commit();
-            session()->flash('success', 'New Blog has been created successfully !!');
-            return redirect()->route('admin.blogs.index');
+            session()->flash('success', 'New Faq has been created successfully !!');
+            return redirect()->route('admin.faqs.index');
         } catch (\Exception $e) {
             session()->flash('sticky_error', $e->getMessage());
             DB::rollBack();
@@ -233,7 +231,7 @@ class BlogsController extends Controller
             $message = 'You are not allowed to access this page !';
             return view('errors.403', compact('message'));
         }
-        $blog = Blog::find($id);
+        $blog = Faq::find($id);
         return view('backend.pages.blogs.show', compact('blog'));
     }
 
@@ -249,7 +247,7 @@ class BlogsController extends Controller
             $message = 'You are not allowed to access this page !';
             return view('errors.403', compact('message'));
         }
-        $blog = Blog::find($id);
+        $blog = Faq::find($id);
         return view('backend.pages.blogs.edit', compact('blog'));
     }
 
@@ -267,38 +265,34 @@ class BlogsController extends Controller
             return view('errors.403', compact('message'));
         }
 
-        $blog = Blog::find($id);
-        if (is_null($blog)) {
+        $faq = Faq::find($id);
+        if (is_null($faq)) {
             session()->flash('error', "The page is not found !");
-            return redirect()->route('admin.blogs.index');
+            return redirect()->route('admin.faqs.index');
         }
 
-        $request->validate([
-            'title'  => 'required|max:100',
-            'slug'  => 'required|max:100|unique:pages,slug,' . $blog->id,
-        ]);
+        // $request->validate([
+        //     'slug'  => 'required|max:100|unique:pages,slug,' . $faq->id,
+        // ]);
 
         try {
             DB::beginTransaction();
-            $blog->title = $request->title;
-            $blog->slug = $request->slug;
-            $blog->status = $request->status;
+            $faq->question_en = $request->question_en;
+            $faq->answer_en = $request->answer_en;
+            $faq->question_ar = $request->question_ar;
+            $faq->answer_ar = $request->answer_ar;
+            $faq->status = $request->status;
 
-            if (!is_null($request->image)) {
-                $blog->image = UploadHelper::update('image', $request->image, $request->title . '-' . time() . '-logo', 'public/assets/images/blogs', $blog->image);
-            }
+            $faq->status = $request->status;
 
-            $blog->status = $request->status;
-            $blog->description = $request->description;
-            $blog->meta_description = $request->meta_description;
-            $blog->updated_by = Auth::id();
-            $blog->updated_at = Carbon::now();
-            $blog->save();
+            $faq->updated_by = Auth::id();
+            $faq->updated_at = Carbon::now();
+            $faq->save();
 
-            Track::newTrack($blog->title, 'Blog has been updated successfully !!');
+            Track::newTrack($faq->question_en, 'Faq has been updated successfully !!');
             DB::commit();
-            session()->flash('success', 'Blog has been updated successfully !!');
-            return redirect()->route('admin.blogs.index');
+            session()->flash('success', 'FAq has been updated successfully !!');
+            return redirect()->route('admin.faqs.index');
         } catch (\Exception $e) {
             session()->flash('sticky_error', $e->getMessage());
             DB::rollBack();
@@ -319,18 +313,18 @@ class BlogsController extends Controller
             return view('errors.403', compact('message'));
         }
 
-        $blog = Blog::find($id);
+        $blog = Faq::find($id);
         if (is_null($blog)) {
             session()->flash('error', "The page is not found !");
-            return redirect()->route('admin.blogs.trashed');
+            return redirect()->route('admin.faqs.trashed');
         }
         $blog->deleted_at = Carbon::now();
         $blog->deleted_by = Auth::id();
         $blog->status = 0;
         $blog->save();
 
-        session()->flash('success', 'Blog has been deleted successfully as trashed !!');
-        return redirect()->route('admin.blogs.trashed');
+        session()->flash('success', 'FAq has been deleted successfully as trashed !!');
+        return redirect()->route('admin.faqs.trashed');
     }
 
     /**
@@ -346,17 +340,17 @@ class BlogsController extends Controller
             return view('errors.403', compact('message'));
         }
 
-        $blog = Blog::find($id);
+        $blog = Faq::find($id);
         if (is_null($blog)) {
             session()->flash('error', "The page is not found !");
-            return redirect()->route('admin.blogs.trashed');
+            return redirect()->route('admin.faqs.trashed');
         }
         $blog->deleted_at = null;
         $blog->deleted_by = null;
         $blog->save();
 
-        session()->flash('success', 'Blog has been revert back successfully !!');
-        return redirect()->route('admin.blogs.trashed');
+        session()->flash('success', 'Faq has been revert back successfully !!');
+        return redirect()->route('admin.faqs.trashed');
     }
 
     /**
@@ -371,10 +365,10 @@ class BlogsController extends Controller
             $message = 'You are not allowed to access this page !';
             return view('errors.403', compact('message'));
         }
-        $blog = Blog::find($id);
+        $blog = Faq::find($id);
         if (is_null($blog)) {
             session()->flash('error', "The page is not found !");
-            return redirect()->route('admin.blogs.trashed');
+            return redirect()->route('admin.faqs.trashed');
         }
 
         // Remove Image
@@ -383,8 +377,8 @@ class BlogsController extends Controller
         // Delete Blog permanently
         $blog->delete();
 
-        session()->flash('success', 'Blog has been deleted permanently !!');
-        return redirect()->route('admin.blogs.trashed');
+        session()->flash('success', 'Faq has been deleted permanently !!');
+        return redirect()->route('admin.faqs.trashed');
     }
 
     /**

@@ -71,8 +71,8 @@
                                 </div>
                                 <div class="form-actions">
                                     <div class="card-body">
-                                        <a  class="btn btn-success" href="{{ route('admin.blogs.edit', $blog->id) }}"> <i class="fa fa-edit"></i> Edit Now</a>
-                                        <a href="{{ route('admin.blogs.index') }}" class="btn btn-dark ml-2">Cancel</a>
+                                        <a  class="btn btn-success" href="{{ route('admin.faqs.edit', $blog->id) }}"> <i class="fa fa-edit"></i> Edit Now</a>
+                                        <a href="{{ route('admin.faqs.index') }}" class="btn btn-dark ml-2">Cancel</a>
                                     </div>
                                 </div>
                             </div>

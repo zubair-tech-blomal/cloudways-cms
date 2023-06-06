@@ -153,7 +153,7 @@
                 </li>
                 @endif
 
-                @if ($user->can('booking_request.view') || $user->can('booking_request.edit') || $user->can('booking_request.delete'))
+                {{-- @if ($user->can('booking_request.view') || $user->can('booking_request.edit') || $user->can('booking_request.delete'))
                 @php
                     $count_pending_booking_request = \Modules\Booking\Entities\BookingRequest::where('status', 'pending')->count();
                 @endphp
@@ -174,29 +174,29 @@
                         @endif
                     </ul>
                 </li>
-                @endif
+                @endif --}}
 
                 @if ($user->can('blog.view') || $user->can('blog.create'))
                     <li class="sidebar-item ">
                         <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                             <i class="mdi mdi-view-list"></i>
-                            <span class="hide-menu">Blogs </span>
+                            <span class="hide-menu">Questionnaire (FAQ) </span>
                         </a>
                         <ul aria-expanded="false" class="collapse first-level {{ (Route::is('admin.blogs.index') || Route::is('admin.blogs.create') || Route::is('admin.blogs.edit')) ? 'in' : null }}">
                             @if ($user->can('blog.view'))
                                 <li class="sidebar-item">
-                                    <a href="{{ route('admin.blogs.index') }}" class="sidebar-link {{ (Route::is('admin.blogs.index') || Route::is('admin.blogs.edit')) ? 'active' : null }}">
+                                    <a href="{{ route('admin.faqs.index') }}" class="sidebar-link {{ (Route::is('admin.blogs.index') || Route::is('admin.blogs.edit')) ? 'active' : null }}">
                                         <i class="mdi mdi-view-list"></i>
-                                        <span class="hide-menu"> Blog List </span>
+                                        <span class="hide-menu"> Questionnaire List </span>
                                     </a>
                                 </li>
                             @endif
 
                             @if ($user->can('blog.create'))
                                 <li class="sidebar-item">
-                                    <a href="{{ route('admin.blogs.create') }}" class="sidebar-link {{ Route::is('admin.blogs.create') ? 'active' : null }}">
+                                    <a href="{{ route('admin.faqs.create') }}" class="sidebar-link {{ Route::is('admin.blogs.create') ? 'active' : null }}">
                                         <i class="mdi mdi-plus-circle"></i>
-                                        <span class="hide-menu"> New Blog </span>
+                                        <span class="hide-menu"> New Question </span>
                                     </a>
                                 </li>
                             @endif

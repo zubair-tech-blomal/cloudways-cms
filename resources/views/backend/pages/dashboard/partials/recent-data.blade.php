@@ -77,7 +77,7 @@
                                     {{ $blog->status === 1 ? 'Published' : 'Pending' }}
                                 </span>
                                 <span class="action-icons">
-                                    <a href="{{ route('admin.blogs.edit', $blog->id) }}">
+                                    <a href="{{ route('admin.faqs.edit', $blog->id) }}">
                                         <i class="ti-pencil-alt"></i>
                                     </a>
                                 </span>
@@ -86,7 +86,7 @@
                     </div>
                 @endforeach
                 <div class="text-center border-top">
-                    <a class="btn btn-rounded btn-primary mt-2 " href="{{ route('admin.blogs.index') }}">View More <i class="fa fa-arrow-right"></i></a>
+                    <a class="btn btn-rounded btn-primary mt-2 " href="{{ route('admin.faqs.index') }}">View More <i class="fa fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>

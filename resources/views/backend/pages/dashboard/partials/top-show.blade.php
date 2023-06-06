@@ -96,7 +96,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="d-flex no-block align-items-center pointer" onclick="location.href='{{ route('admin.blogs.index') }}'">
+                        <div class="d-flex no-block align-items-center pointer" onclick="location.href='{{ route('admin.faqs.index') }}'">
                             <div>
                                 <i class="mdi mdi-tune font-20 text-muted"></i>
                                 <p class="font-16 m-b-5">Total Blogs</p>

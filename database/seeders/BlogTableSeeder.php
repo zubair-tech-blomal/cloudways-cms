@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Blog;
+use App\Models\Faq;
 use Illuminate\Database\Seeder;
 
 class BlogTableSeeder extends Seeder
@@ -14,13 +14,13 @@ class BlogTableSeeder extends Seeder
      */
     public function run()
     {
-        $blog = new Blog();
+        $blog = new Faq();
         $blog->title = "This is a simple blog from admin panel";
         $blog->slug = "this-is-a-simple-blog-from-admin-panel";
         $blog->description = "<div>Welcome to our blog <br /></div>";
         $blog->save();
 
-        $blog = new Blog();
+        $blog = new Faq();
         $blog->title = "This is a another blog from admin panel";
         $blog->slug = "this-is-a-another-blog-from-admin-panel";
         $blog->description = "<div>Welcome to our blog <br /></div>";

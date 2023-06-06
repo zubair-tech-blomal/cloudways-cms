@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
-use App\Models\Blog;
+use App\Models\Faq;
 use Modules\Article\Entities\Category;
 use Modules\Article\Entities\Page;
 use Illuminate\Support\Facades\Auth;
@@ -37,10 +37,10 @@ class DashboardsController extends Controller
         $count_admins = count(Admin::select('id')->get());
         $count_roles = count(DB::table('roles')->select('id')->get());
         $count_pages = count(Page::select('id')->get());
-        $count_blogs = count(Blog::select('id')->get());
+        $count_blogs = count(Faq::select('id')->get());
         $count_categories = count(Category::select('id')->get());
         $recent_pages = Page::where('deleted_at', null)->limit(10)->orderBy('id', 'desc')->get();
-        $recent_blogs = Blog::where('deleted_at', null)->limit(10)->orderBy('id', 'desc')->get();
+        $recent_blogs = Faq::where('deleted_at', null)->limit(10)->orderBy('id', 'desc')->get();
         return view('backend.pages.dashboard.index', compact('count_pages', 'count_blogs', 'count_admins', 'count_roles', 'count_categories', 'recent_pages', 'recent_blogs'));
     }
 }

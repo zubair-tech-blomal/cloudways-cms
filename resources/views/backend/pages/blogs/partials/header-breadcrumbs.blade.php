@@ -3,14 +3,14 @@
         <div class="col-5 align-self-center">
             <h4 class="page-title">
                 @if (Route::is('admin.blogs.index'))
-                    Blog List
+                    Faq List
                 @elseif(Route::is('admin.blogs.create'))
-                    Create New Blog    
+                    Create New Faq    
                 @elseif(Route::is('admin.blogs.edit'))
-                    Edit Blog <span class="badge badge-info">{{ $blog->title }}</span>
+                    Edit Faq <span class="badge badge-info">{{ $blog->title }}</span>
                 @elseif(Route::is('admin.blogs.show'))
-                    View Blog <span class="badge badge-info">{{ $blog->title }}</span>
-                    <a  class="btn btn-outline-success btn-sm" href="{{ route('admin.blogs.edit', $blog->id) }}"> <i class="fa fa-edit"></i></a>
+                    View Faq <span class="badge badge-info">{{ $blog->title }}</span>
+                    <a  class="btn btn-outline-success btn-sm" href="{{ route('admin.faqs.edit', $blog->id) }}"> <i class="fa fa-edit"></i></a>
                 @endif
             </h4>
         </div>
@@ -19,17 +19,17 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Home</a></li>
-                        @if (Route::is('admin.blogs.index'))
-                            <li class="breadcrumb-item active" aria-current="page">Blog List</li>
-                        @elseif(Route::is('admin.blogs.create'))
-                        <li class="breadcrumb-item"><a href="{{ route('admin.blogs.index') }}">Blog List</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Create New Blog</li>
-                        @elseif(Route::is('admin.blogs.edit'))
-                        <li class="breadcrumb-item"><a href="{{ route('admin.blogs.index') }}">Blog List</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Edit Blog</li>
-                        @elseif(Route::is('admin.blogs.show'))
-                        <li class="breadcrumb-item"><a href="{{ route('admin.blogs.index') }}">Blog List</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Show Blog</li>
+                        @if (Route::is('admin.faqs.index'))
+                            <li class="breadcrumb-item active" aria-current="page">Faq List</li>
+                        @elseif(Route::is('admin.faqs.create'))
+                        <li class="breadcrumb-item"><a href="{{ route('admin.faqs.index') }}">Faq List</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Create New Faq</li>
+                        @elseif(Route::is('admin.faqs.edit'))
+                        <li class="breadcrumb-item"><a href="{{ route('admin.faqs.index') }}">Faq List</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Edit Faq</li>
+                        @elseif(Route::is('admin.faqs.show'))
+                        <li class="breadcrumb-item"><a href="{{ route('admin.faqs.index') }}">Faq List</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Show Faq</li>
                         @endif
                         
                     </ol>

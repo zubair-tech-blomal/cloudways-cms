@@ -79,9 +79,9 @@
                             <li><a href="forgot-password.html">Forgot Password</a></li>
                         </ul>
                     </li>
-                    <li><a href="blog.html">Blog</a>
+                    <li><a href="blog.html">Faq</a>
                         <ul>
-                            <li><a href="single.html">Blog Post</a></li>
+                            <li><a href="single.html">Faq Post</a></li>
                         </ul>
                     </li>
                     <li><a href="contact.html">Contact Us</a></li>

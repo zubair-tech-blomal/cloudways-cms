@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 05, 2023 at 05:03 PM
+-- Generation Time: Jun 06, 2023 at 04:59 PM
 -- Server version: 10.6.12-MariaDB-0ubuntu0.22.04.1
 -- PHP Version: 7.4.33
 
@@ -99,36 +99,6 @@ CREATE TABLE `billing_information` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `blogs`
---
-
-CREATE TABLE `blogs` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(191) NOT NULL,
-  `slug` varchar(191) NOT NULL,
-  `image` varchar(191) DEFAULT NULL,
-  `description` text NOT NULL,
-  `meta_description` text DEFAULT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT 1 COMMENT '1=>active, 0=>inactive',
-  `deleted_at` timestamp NULL DEFAULT NULL,
-  `created_by` bigint(20) UNSIGNED DEFAULT NULL,
-  `updated_by` bigint(20) UNSIGNED DEFAULT NULL,
-  `deleted_by` bigint(20) UNSIGNED DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `blogs`
---
-
-INSERT INTO `blogs` (`id`, `title`, `slug`, `image`, `description`, `meta_description`, `status`, `deleted_at`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`) VALUES
-(1, 'This is a simple blog from admin panel', 'this-is-a-simple-blog-from-admin-panel', NULL, '<div>Welcome to our blog <br /></div>', NULL, 1, NULL, NULL, NULL, NULL, '2023-05-23 07:07:28', '2023-05-23 07:07:28'),
-(2, 'This is a another blog from admin panel', 'this-is-a-another-blog-from-admin-panel', NULL, '<div>Welcome to our blog <br /></div>', NULL, 1, NULL, NULL, NULL, NULL, '2023-05-23 07:07:28', '2023-05-23 07:07:28');
 
 -- --------------------------------------------------------
 
@@ -302,6 +272,41 @@ CREATE TABLE `failed_jobs` (
   `exception` longtext NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `faqs`
+--
+
+CREATE TABLE `faqs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(191) NOT NULL,
+  `question_en` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `question_ar` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `answer_en` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `answer_ar` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `slug` text NOT NULL,
+  `image` varchar(191) DEFAULT NULL,
+  `description` text NOT NULL,
+  `meta_description` text DEFAULT NULL,
+  `meta_description_ar` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 1 COMMENT '1=>active, 0=>inactive',
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `created_by` bigint(20) UNSIGNED DEFAULT NULL,
+  `updated_by` bigint(20) UNSIGNED DEFAULT NULL,
+  `deleted_by` bigint(20) UNSIGNED DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `faqs`
+--
+
+INSERT INTO `faqs` (`id`, `title`, `question_en`, `question_ar`, `answer_en`, `answer_ar`, `slug`, `image`, `description`, `meta_description`, `meta_description_ar`, `status`, `deleted_at`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`) VALUES
+(8, '', 'test en1', 'بالعربيةبالعربيةبالعربية', 'test answer12', 'بالعربيةبالعربيةبالعربية', 'wiv9qjspcf', NULL, '', NULL, NULL, 1, NULL, 1, 1, NULL, '2023-06-06 10:56:04', '2023-06-06 10:57:17'),
+(9, '', 'my sample question1', 'بالعربيةبالعربيةبالعربية11', 'my sample answer1', 'بالعربيةبالعربيةبالعربيةبالعربيةبالعربيةبالعربيةبالعربية1111', 'mysamplequestion', NULL, '', NULL, NULL, 1, NULL, 1, 1, NULL, '2023-06-06 10:58:42', '2023-06-06 10:59:08');
 
 -- --------------------------------------------------------
 
@@ -985,7 +990,27 @@ INSERT INTO `tracks` (`id`, `title`, `description`, `reference_link`, `admin_id`
 (130, 'Faqs', 'Page has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-05 10:18:36', '2023-06-05 10:18:36'),
 (131, 'Faqs', 'Page has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-05 10:19:43', '2023-06-05 10:19:43'),
 (132, 'Faqs', 'Page has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-05 10:19:51', '2023-06-05 10:19:51'),
-(133, 'Faqs', 'Page has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-05 10:21:38', '2023-06-05 10:21:38');
+(133, 'Faqs', 'Page has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-05 10:21:38', '2023-06-05 10:21:38'),
+(134, 'test1', 'New Blog has been created', NULL, 1, NULL, NULL, '2023-06-06 05:21:41', '2023-06-06 05:21:41'),
+(135, 'new faq', 'New Blog has been created', NULL, 1, NULL, NULL, '2023-06-06 05:39:07', '2023-06-06 05:39:07'),
+(136, 'my test1', 'New Blog has been created', NULL, 1, NULL, NULL, '2023-06-06 05:50:20', '2023-06-06 05:50:20'),
+(137, 'my test1222', 'Blog has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-06 05:55:22', '2023-06-06 05:55:22'),
+(138, 'my test1222', 'Faq has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-06 05:58:19', '2023-06-06 05:58:19'),
+(139, 'test question', 'New Faq has been created', NULL, 1, NULL, NULL, '2023-06-06 10:15:33', '2023-06-06 10:15:33'),
+(140, 'test question1', 'Faq has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-06 10:41:07', '2023-06-06 10:41:07'),
+(141, 'test question1', 'Faq has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-06 10:41:39', '2023-06-06 10:41:39'),
+(142, 'test question1', 'Faq has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-06 10:41:51', '2023-06-06 10:41:51'),
+(143, 'test question1', 'Faq has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-06 10:42:30', '2023-06-06 10:42:30'),
+(144, 'how to invest', 'New Faq has been created', NULL, 1, NULL, NULL, '2023-06-06 10:50:05', '2023-06-06 10:50:05'),
+(145, 'wiv9qJsPCF', 'New Faq has been created', NULL, 1, NULL, NULL, '2023-06-06 10:56:04', '2023-06-06 10:56:04'),
+(146, 'wiv9qJsPCF', 'Faq has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-06 10:56:09', '2023-06-06 10:56:09'),
+(147, 'wiv9qJsPCF1', 'Faq has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-06 10:56:18', '2023-06-06 10:56:18'),
+(148, 'wiv9qJsPCF1', 'Faq has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-06 10:56:25', '2023-06-06 10:56:25'),
+(149, 'wiv9qJsPCF1', 'Faq has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-06 10:56:35', '2023-06-06 10:56:35'),
+(150, 'test en', 'Faq has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-06 10:57:03', '2023-06-06 10:57:03'),
+(151, 'test en1', 'Faq has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-06 10:57:17', '2023-06-06 10:57:17'),
+(152, 'my sample question', 'New Faq has been created', NULL, 1, NULL, NULL, '2023-06-06 10:58:42', '2023-06-06 10:58:42'),
+(153, 'my sample question1', 'Faq has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-06 10:59:08', '2023-06-06 10:59:08');
 
 -- --------------------------------------------------------
 
@@ -1046,16 +1071,6 @@ ALTER TABLE `billing_information`
   ADD KEY `billing_information_payment_status_index` (`payment_status`);
 
 --
--- Indexes for table `blogs`
---
-ALTER TABLE `blogs`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `blogs_slug_unique` (`slug`),
-  ADD KEY `blogs_created_by_foreign` (`created_by`),
-  ADD KEY `blogs_updated_by_foreign` (`updated_by`),
-  ADD KEY `blogs_deleted_by_foreign` (`deleted_by`);
-
---
 -- Indexes for table `booking_rates`
 --
 ALTER TABLE `booking_rates`
@@ -1108,6 +1123,16 @@ ALTER TABLE `countries`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `faqs`
+--
+ALTER TABLE `faqs`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `blogs_slug_unique` (`slug`) USING HASH,
+  ADD KEY `blogs_created_by_foreign` (`created_by`),
+  ADD KEY `blogs_updated_by_foreign` (`updated_by`),
+  ADD KEY `blogs_deleted_by_foreign` (`deleted_by`);
 
 --
 -- Indexes for table `languages`
@@ -1268,12 +1293,6 @@ ALTER TABLE `billing_information`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `blogs`
---
-ALTER TABLE `blogs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
 -- AUTO_INCREMENT for table `booking_rates`
 --
 ALTER TABLE `booking_rates`
@@ -1308,6 +1327,12 @@ ALTER TABLE `countries`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `faqs`
+--
+ALTER TABLE `faqs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `languages`
@@ -1367,7 +1392,7 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT for table `tracks`
 --
 ALTER TABLE `tracks`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=154;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -1388,14 +1413,6 @@ ALTER TABLE `admins`
   ADD CONSTRAINT `admins_updated_by_foreign` FOREIGN KEY (`updated_by`) REFERENCES `admins` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `blogs`
---
-ALTER TABLE `blogs`
-  ADD CONSTRAINT `blogs_created_by_foreign` FOREIGN KEY (`created_by`) REFERENCES `admins` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `blogs_deleted_by_foreign` FOREIGN KEY (`deleted_by`) REFERENCES `admins` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `blogs_updated_by_foreign` FOREIGN KEY (`updated_by`) REFERENCES `admins` (`id`) ON DELETE CASCADE;
-
---
 -- Constraints for table `categories`
 --
 ALTER TABLE `categories`
@@ -1410,6 +1427,14 @@ ALTER TABLE `categories`
 ALTER TABLE `contacts`
   ADD CONSTRAINT `contacts_deleted_by_foreign` FOREIGN KEY (`deleted_by`) REFERENCES `admins` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `contacts_updated_by_foreign` FOREIGN KEY (`updated_by`) REFERENCES `admins` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `faqs`
+--
+ALTER TABLE `faqs`
+  ADD CONSTRAINT `blogs_created_by_foreign` FOREIGN KEY (`created_by`) REFERENCES `admins` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `blogs_deleted_by_foreign` FOREIGN KEY (`deleted_by`) REFERENCES `admins` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `blogs_updated_by_foreign` FOREIGN KEY (`updated_by`) REFERENCES `admins` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `languages`

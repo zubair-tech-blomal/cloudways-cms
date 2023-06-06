@@ -7,7 +7,7 @@ use App\Http\Controllers\Backend\Auth\ForgotPasswordController;
 use App\Http\Controllers\Backend\DashboardsController;
 use App\Http\Controllers\Backend\AdminsController;
 use App\Http\Controllers\Backend\RolesController;
-use App\Http\Controllers\Backend\BlogsController;
+use App\Http\Controllers\Backend\FaqsController;
 use App\Http\Controllers\Backend\ContactsController;
 use App\Http\Controllers\Backend\CacheController;
 use App\Http\Controllers\Backend\LanguagesController;
@@ -56,10 +56,10 @@ Route::group(['prefix' => ''], function () {
  * Blog Management Routes
  */
 Route::group(['prefix' => ''], function () {
-    Route::resource('blogs', BlogsController::class);
-    Route::get('blogs/trashed/view', [BlogsController::class, 'trashed'])->name('blogs.trashed');
-    Route::delete('blogs/trashed/destroy/{id}', [BlogsController::class, 'destroyTrash'])->name('blogs.trashed.destroy');
-    Route::put('blogs/trashed/revert/{id}', [BlogsController::class, 'revertFromTrash'])->name('blogs.trashed.revert');
+    Route::resource('faqs', FaqsController::class);
+    Route::get('faqs/trashed/view', [FaqsController::class, 'trashed'])->name('faqs.trashed');
+    Route::delete('faqs/trashed/destroy/{id}', [FaqsController::class, 'destroyTrash'])->name('faqs.trashed.destroy');
+    Route::put('faqs/trashed/revert/{id}', [FaqsController::class, 'revertFromTrash'])->name('faqs.trashed.revert');
 });
 
 /**

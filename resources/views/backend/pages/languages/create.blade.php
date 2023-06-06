@@ -68,7 +68,7 @@
                                 <div class="form-actions">
                                     <div class="card-body">
                                         <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Save</button>
-                                        <a href="{{ route('admin.blogs.index') }}" class="btn btn-dark">Cancel</a>
+                                        <a href="{{ route('admin.faqs.index') }}" class="btn btn-dark">Cancel</a>
                                     </div>
                                 </div>
                             </div>

@@ -14,8 +14,8 @@
                 <thead>
                     <tr>
                         <th>Sl</th>
-                        <th>Name</th>
-                        <th>Featured Image</th>
+                        <th>Question</th>
+                        {{-- <th>Featured Image</th> --}}
                         <th>Status</th>
                         <th width="100">Action</th>
                     </tr>
@@ -27,7 +27,8 @@
 
 @section('scripts')
     <script>
-    const ajaxURL = "<?php echo Route::is('admin.blogs.trashed' ? 'blogs/trashed/view' : 'blogs') ?>";
+    const ajaxURL = "<?php echo Route::is('admin.faqs.trashed' ? 'faqs/trashed/view' : 'faqs') ?>";
+
     $('table#blogs_table').DataTable({
         dom: 'Blfrtip',
         language: {processing: "<span class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></span> Loading Data..."},
@@ -38,8 +39,8 @@
         buttons: ['excel', 'pdf', 'print'],
         columns: [
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-            {data: 'title', name: 'title'},
-            {data: 'image', name: 'image'},
+            {data: 'question_en', name: 'question_en'},
+            // {data: 'image', name: 'image'},
             {data: 'status', name: 'status'},
             {data: 'action', name: 'action'}
         ]
