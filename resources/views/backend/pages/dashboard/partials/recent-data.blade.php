@@ -49,12 +49,12 @@
 
 
 
-    @if (Auth::user()->can('blog.view'))
+    @if (Auth::user()->can('faq.view'))
     <!-- column -->
     <div class="col-lg-6">
         <div class="card">
             <div class="card-body border-bottom">
-                <h4 class="card-title">Recent Blog Articles</h4>
+                <h4 class="card-title">Recent Faqs</h4>
             </div>
             <div class="comment-widgets scrollable" style="height:430px;">
                 @foreach ($recent_blogs as $blog)

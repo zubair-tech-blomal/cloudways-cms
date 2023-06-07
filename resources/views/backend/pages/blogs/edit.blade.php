@@ -8,6 +8,9 @@
 @include('backend.pages.blogs.partials.header-breadcrumbs')
 <div class="container-fluid">
     @include('backend.layouts.partials.messages')
+    <h4 class="page-title">
+        Edit Faq
+    </h4>
     <div class="create-page">
         <form action="{{ route('admin.faqs.update', $blog->id) }}" method="POST" enctype="multipart/form-data" data-parsley-validate data-parsley-focus="first">
             @csrf

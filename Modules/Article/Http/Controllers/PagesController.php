@@ -340,7 +340,14 @@ class PagesController extends Controller
             ]);
         }
 
-        if ($page->slug == "home" || $page->slug == "investment" ||  $page->slug == "faqs") {
+        if ($page->slug == "terms") {
+            $request->validate([
+                'terms_en'  => 'required',
+                'terms_ar'  => 'required',
+            ]);
+        }
+
+        if ($page->slug == "home" || $page->slug == "investment" ||  $page->slug == "faqs" || $page->slug == "terms") {
             $request->validate([
                 'title'  => 'required|max:100',
             ]);
@@ -372,6 +379,12 @@ class PagesController extends Controller
                     $page->description = $request->description;
                     $page->investment_description_ar = $request->investment_description_ar;
                 }
+
+                if ($page->slug == "terms") {
+                    $page->terms_en = $request->terms_en;
+                    $page->terms_ar = $request->terms_ar;
+                }
+
                 $page->meta_description = $request->meta_description;
                 $page->meta_description_ar = $request->meta_description_ar;
 

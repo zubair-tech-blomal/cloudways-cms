@@ -31,7 +31,7 @@ class LanguagesController extends Controller
      */
     public function index()
     {
-        if (is_null($this->user) || !$this->user->can('blog.view')) {
+        if (is_null($this->user) || !$this->user->can('faq.view')) {
             $message = 'You are not allowed to access this page !';
             return view('errors.403', compact('message'));
         }
@@ -97,7 +97,7 @@ class LanguagesController extends Controller
      */
     public function store(Request $request)
     {
-        if (is_null($this->user) || !$this->user->can('blog.create')) {
+        if (is_null($this->user) || !$this->user->can('faq.create')) {
             return abort(403, 'You are not allowed to access this page !');
         }
 
@@ -150,7 +150,7 @@ class LanguagesController extends Controller
      */
     public function show($id)
     {
-        if (is_null($this->user) || !$this->user->can('blog.view')) {
+        if (is_null($this->user) || !$this->user->can('faq.view')) {
             $message = 'You are not allowed to access this page !';
             return view('errors.403', compact('message'));
         }
@@ -166,7 +166,7 @@ class LanguagesController extends Controller
      */
     public function edit($id)
     {
-        if (is_null($this->user) || !$this->user->can('blog.edit')) {
+        if (is_null($this->user) || !$this->user->can('faq.edit')) {
             $message = 'You are not allowed to access this page !';
             return view('errors.403', compact('message'));
         }
@@ -187,7 +187,7 @@ class LanguagesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if (is_null($this->user) || !$this->user->can('blog.edit')) {
+        if (is_null($this->user) || !$this->user->can('faq.edit')) {
             $message = 'You are not allowed to access this page !';
             return view('errors.403', compact('message'));
         }

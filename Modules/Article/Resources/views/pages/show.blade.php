@@ -11,6 +11,11 @@
         <div class="create-page">
                 <div class="form-body">
                     <div class="card-body">
+                        @if($page->status==1)
+                        <div class="alert alert-success" role="alert">Active</div> 
+                        @else
+                        <div class="alert alert-warning" role="alert">Inactive</div> 
+                        @endif
                         <div class="row ">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -19,17 +24,7 @@
                                     {{ $page->title }}
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group has-success">
-                                    <label class="control-label" for="status">Status</label>
-                                    <br>
-                                    @if($page->status==1)
-                                    <div class="p-3 mb-2 bg-success text-white">Active</div> 
-                                    @else
-                                    <div class="p-3 mb-2 bg-warning text-dark">Inactive</div> 
-                                    @endif
-                                </div>
-                            </div>
+                          
                         </div>
 
 

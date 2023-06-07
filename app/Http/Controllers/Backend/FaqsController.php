@@ -32,24 +32,24 @@ class FaqsController extends Controller
      */
     public function index($isTrashed = false)
     {
-        if (is_null($this->user) || !$this->user->can('blog.view')) {
+        if (is_null($this->user) || !$this->user->can('faq.view')) {
             $message = 'You are not allowed to access this page !';
             return view('errors.403', compact('message'));
         }
 
         if (request()->ajax()) {
             if ($isTrashed) {
-                $blogs = Faq::orderBy('id', 'desc')
+                $faqs = Faq::orderBy('id', 'asc')
                     ->where('status', 0)
                     ->get();
             } else {
-                $blogs = Faq::orderBy('id', 'desc')
+                $faqs = Faq::orderBy('id', 'asc')
                     ->where('deleted_at', null)
                     ->where('status', 1)
                     ->get();
             }
 
-            $datatable = DataTables::of($blogs, $isTrashed)
+            $datatable = DataTables::of($faqs, $isTrashed)
                 ->addIndexColumn()
                 ->addColumn(
                     'action',
@@ -61,14 +61,14 @@ class FaqsController extends Controller
 
                         if ($row->deleted_at === null) {
                             $deleteRoute =  route('admin.faqs.destroy', [$row->id]);
-                            if ($this->user->can('blog.edit')) {
+                            if ($this->user->can('faq.edit')) {
                                 $html .= '<a class="btn waves-effect waves-light btn-success btn-sm btn-circle ml-1 " title="Edit Blog Details" href="' . route('admin.faqs.edit', $row->id) . '"><i class="fa fa-edit"></i></a>';
                             }
-                            if ($this->user->can('blog.delete')) {
+                            if ($this->user->can('faq.delete')) {
                                 $html .= '<a class="btn waves-effect waves-light btn-danger btn-sm btn-circle ml-1 text-white" title="Delete Admin" id="deleteItem' . $row->id . '"><i class="fa fa-trash"></i></a>';
                             }
                         } else {
-                            if ($this->user->can('blog.delete')) {
+                            if ($this->user->can('faq.delete')) {
                                 $deleteRoute =  route('admin.faqs.trashed.destroy', [$row->id]);
                                 $revertRoute = route('admin.faqs.trashed.revert', [$row->id]);
 
@@ -84,7 +84,7 @@ class FaqsController extends Controller
                             }
                         }
 
-                        if ($this->user->can('blog.delete')) {
+                        if ($this->user->can('faq.delete')) {
                             $html .= '<script>
                             $("#deleteItem' . $row->id . '").click(function(){
                                 swal.fire({ title: "Are you sure?",text: "Faq will be deleted as trashed !",type: "warning",showCancelButton: true,confirmButtonColor: "#DD6B55",confirmButtonText: "Yes, delete it!"
@@ -149,10 +149,10 @@ class FaqsController extends Controller
                 ->make(true);
         }
 
-        $count_blogs = count(Faq::select('id')->get());
-        $count_active_blogs = count(Faq::select('id')->where('status', 1)->get());
-        $count_trashed_blogs = count(Faq::select('id')->where('deleted_at', '!=', null)->get());
-        return view('backend.pages.blogs.index', compact('count_blogs', 'count_active_blogs', 'count_trashed_blogs'));
+        $count_faqs = count(Faq::select('id')->get());
+        $count_active_faqs = count(Faq::select('id')->where('status', 1)->get());
+        $count_trashed_faqs = count(Faq::select('id')->where('deleted_at', '!=', null)->get());
+        return view('backend.pages.blogs.index', compact('count_faqs', 'count_active_faqs', 'count_trashed_faqs'));
     }
 
     /**
@@ -162,7 +162,7 @@ class FaqsController extends Controller
      */
     public function create()
     {
-        if (is_null($this->user) || !$this->user->can('blog.create')) {
+        if (is_null($this->user) || !$this->user->can('faq.create')) {
             return abort(403, 'You are not allowed to access this page !');
         }
 
@@ -177,7 +177,7 @@ class FaqsController extends Controller
      */
     public function store(Request $request)
     {
-        if (is_null($this->user) || !$this->user->can('blog.create')) {
+        if (is_null($this->user) || !$this->user->can('faq.create')) {
             return abort(403, 'You are not allowed to access this page !');
         }
 
@@ -227,7 +227,7 @@ class FaqsController extends Controller
      */
     public function show($id)
     {
-        if (is_null($this->user) || !$this->user->can('blog.view')) {
+        if (is_null($this->user) || !$this->user->can('faq.view')) {
             $message = 'You are not allowed to access this page !';
             return view('errors.403', compact('message'));
         }
@@ -243,7 +243,7 @@ class FaqsController extends Controller
      */
     public function edit($id)
     {
-        if (is_null($this->user) || !$this->user->can('blog.edit')) {
+        if (is_null($this->user) || !$this->user->can('faq.edit')) {
             $message = 'You are not allowed to access this page !';
             return view('errors.403', compact('message'));
         }
@@ -260,7 +260,7 @@ class FaqsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if (is_null($this->user) || !$this->user->can('blog.edit')) {
+        if (is_null($this->user) || !$this->user->can('faq.edit')) {
             $message = 'You are not allowed to access this page !';
             return view('errors.403', compact('message'));
         }
@@ -308,7 +308,7 @@ class FaqsController extends Controller
      */
     public function destroy($id)
     {
-        if (is_null($this->user) || !$this->user->can('blog.delete')) {
+        if (is_null($this->user) || !$this->user->can('faq.delete')) {
             $message = 'You are not allowed to access this page !';
             return view('errors.403', compact('message'));
         }
@@ -335,7 +335,7 @@ class FaqsController extends Controller
      */
     public function revertFromTrash($id)
     {
-        if (is_null($this->user) || !$this->user->can('blog.delete')) {
+        if (is_null($this->user) || !$this->user->can('faq.delete')) {
             $message = 'You are not allowed to access this page !';
             return view('errors.403', compact('message'));
         }
@@ -361,7 +361,7 @@ class FaqsController extends Controller
      */
     public function destroyTrash($id)
     {
-        if (is_null($this->user) || !$this->user->can('blog.delete')) {
+        if (is_null($this->user) || !$this->user->can('faq.delete')) {
             $message = 'You are not allowed to access this page !';
             return view('errors.403', compact('message'));
         }
@@ -388,7 +388,7 @@ class FaqsController extends Controller
      */
     public function trashed()
     {
-        if (is_null($this->user) || !$this->user->can('blog.view')) {
+        if (is_null($this->user) || !$this->user->can('faq.view')) {
             $message = 'You are not allowed to access this page !';
             return view('errors.403', compact('message'));
         }

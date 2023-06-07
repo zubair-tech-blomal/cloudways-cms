@@ -176,14 +176,14 @@
                 </li>
                 @endif --}}
 
-                @if ($user->can('blog.view') || $user->can('blog.create'))
+                @if ($user->can('faq.view') || $user->can('faq.create'))
                     <li class="sidebar-item ">
                         <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                             <i class="mdi mdi-view-list"></i>
                             <span class="hide-menu">Questionnaire (FAQ) </span>
                         </a>
                         <ul aria-expanded="false" class="collapse first-level {{ (Route::is('admin.blogs.index') || Route::is('admin.blogs.create') || Route::is('admin.blogs.edit')) ? 'in' : null }}">
-                            @if ($user->can('blog.view'))
+                            @if ($user->can('faq.view'))
                                 <li class="sidebar-item">
                                     <a href="{{ route('admin.faqs.index') }}" class="sidebar-link {{ (Route::is('admin.blogs.index') || Route::is('admin.blogs.edit')) ? 'active' : null }}">
                                         <i class="mdi mdi-view-list"></i>
@@ -192,7 +192,7 @@
                                 </li>
                             @endif
 
-                            @if ($user->can('blog.create'))
+                            @if ($user->can('faq.create'))
                                 <li class="sidebar-item">
                                     <a href="{{ route('admin.faqs.create') }}" class="sidebar-link {{ Route::is('admin.blogs.create') ? 'active' : null }}">
                                         <i class="mdi mdi-plus-circle"></i>
@@ -235,12 +235,12 @@
                         <span class="hide-menu">Settings </span>
                     </a>
                     <ul aria-expanded="false" class="collapse first-level {{ (Route::is('admin.languages.index') || Route::is('admin.languages.create') || Route::is('admin.languages.edit') || Route::is('admin.languages.connection.index')) ? 'in' : null }}">
-                        <li class="sidebar-item">
+                        {{-- <li class="sidebar-item">
                             <a href="{{ route('admin.languages.index') }}" class="sidebar-link {{ ( Route::is('admin.languages.index') || Route::is('admin.languages.create') || Route::is('admin.languages.edit')) ? 'active' : null }}">
                                 <i class="mdi mdi-plus-circle"></i>
                                 <span class="hide-menu"> Languages </span>
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="sidebar-item">
                             <a href="{{ route('admin.settings.index') }}" class="sidebar-link {{ ( Route::is('admin.settings.index')) ? 'active' : null }}">
                                 <i class="mdi mdi-settings"></i>

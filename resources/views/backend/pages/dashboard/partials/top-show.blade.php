@@ -90,7 +90,7 @@
         </div>
     @endif
 
-    @if ($user->can('blog.view'))
+    @if ($user->can('faq.view'))
         <!-- Column -->
         <div class="card">
             <div class="card-body">
@@ -99,10 +99,10 @@
                         <div class="d-flex no-block align-items-center pointer" onclick="location.href='{{ route('admin.faqs.index') }}'">
                             <div>
                                 <i class="mdi mdi-tune font-20 text-muted"></i>
-                                <p class="font-16 m-b-5">Total Blogs</p>
+                                <p class="font-16 m-b-5">Total Faqs</p>
                             </div>
                             <div class="ml-auto">
-                                <h1 class="font-light text-right">{{ $count_blogs }}</h1>
+                                <h1 class="font-light text-right">{{ $count_faqs }}</h1>
                             </div>
                         </div>
                     </div>

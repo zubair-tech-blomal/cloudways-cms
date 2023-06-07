@@ -109,11 +109,11 @@ class RolePermissionsTableSeeder extends Seeder
                 'booking_request.delete',
             ],
 
-            'blog' => [
-                'blog.view',
-                'blog.create',
-                'blog.edit',
-                'blog.delete',
+            'faq' => [
+                'faq.view',
+                'faq.create',
+                'faq.edit',
+                'faq.delete',
             ],
 
             'slider' => [

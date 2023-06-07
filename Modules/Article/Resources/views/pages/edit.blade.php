@@ -84,6 +84,28 @@
                         </div>
                     </div>
                     @endif
+                    @if($page->slug=="terms")
+                    <div class="row ">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label" for="terms_en">Terms & Conditions (en) </label>
+                                <textarea type="text" class="form-control tinymce_advance" id="terms_en"
+                                    name="terms_en" value="{{ old('terms_en') }}" required="">{{ $page->terms_en }}</textarea>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label" for="terms_ar">Terms & Conditions (ar) </label>
+                                <textarea type="text" dir="rtl" class="form-control tinymce_advance" id="terms_ar"
+                                    name="terms_ar" value="{{ old('terms_ar') }}" required="">{{ $page->terms_ar }}</textarea>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    @endif
                     <!-- about us content -->
                     @if($page->slug=="about-us")
 

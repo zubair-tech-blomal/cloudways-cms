@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 06, 2023 at 04:59 PM
+-- Generation Time: Jun 07, 2023 at 04:59 PM
 -- Server version: 10.6.12-MariaDB-0ubuntu0.22.04.1
 -- PHP Version: 7.4.33
 
@@ -55,9 +55,10 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `first_name`, `last_name`, `username`, `phone_no`, `email`, `email_verified_at`, `password`, `avatar`, `status`, `visible_in_team`, `designation`, `social_links`, `remember_token`, `deleted_at`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`) VALUES
-(1, 'Super Admin', '', 'superadmin', '+966542816280', 'zubair@blomal.com', NULL, '$2y$10$rqfcGKkjFLbrYxYOcuzWfORCGmvJJikyQmzbetPYlSIWJSBLsIWCW', NULL, 1, 0, NULL, NULL, 'xpNr29ap9Nya6kAOcAykc31sgcJQ1TxnnTcVZtQzOP5cRdtX6OagXuAH9I0t', NULL, NULL, NULL, NULL, '2023-05-23 07:07:28', '2023-05-23 07:07:28'),
+(1, 'Super Admin', '', 'superadmin', '+966542816280', 'zubair@blomal.com', NULL, '$2y$10$rqfcGKkjFLbrYxYOcuzWfORCGmvJJikyQmzbetPYlSIWJSBLsIWCW', NULL, 1, 0, NULL, NULL, 'tBgCddIx0mzMj3CmQqMEehgmQoaRiQKssopnSeRm6YOZ9LRRhmDO3htdldDG', NULL, NULL, NULL, NULL, '2023-05-23 07:07:28', '2023-05-23 07:07:28'),
 (2, 'Admin', '', 'admin', '018XXXXXXXX', 'admin@example.com', NULL, '$2y$10$GFR44B75hahJxq9qd8vhgOQ1kuWWRB9RHLE8RriIcVb9iDdi6n812', NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-05-23 07:07:28', '2023-05-23 07:07:28'),
-(3, 'Editor', NULL, 'editor', '017XXXXXXXX', 'editor@example.com', NULL, '$2y$10$Bd5MejHFsDCmwu.tfAliaOCiCvyBKNMQ82vP1AjgzTxMN1vpB/qDu', NULL, 1, 0, 'test', '{\"facebook\":null,\"twitter\":null,\"linkedin\":null,\"instagram\":null,\"youtube\":null}', NULL, NULL, NULL, 1, NULL, '2023-05-23 07:07:28', '2023-05-23 07:28:37');
+(3, 'Editor', NULL, 'editor', '017XXXXXXXX', 'editor@example.com', NULL, '$2y$10$Bd5MejHFsDCmwu.tfAliaOCiCvyBKNMQ82vP1AjgzTxMN1vpB/qDu', NULL, 1, 0, 'test', '{\"facebook\":null,\"twitter\":null,\"linkedin\":null,\"instagram\":null,\"youtube\":null}', NULL, NULL, NULL, 1, NULL, '2023-05-23 07:07:28', '2023-05-23 07:28:37'),
+(4, 'Zubair', 'Yousaf', 'zubairbobby', '0542816280', 'zubair_bobby@hotmail.com', NULL, '$2y$10$W3le1aN01NfeGj61QKfileR9Bq8QopR/eKnnSrfVcdl07.B2b5pQm', NULL, 1, 1, 'test', '{\"facebook\":null,\"twitter\":null,\"linkedin\":null,\"instagram\":null,\"youtube\":null}', NULL, NULL, 1, 1, NULL, '2023-06-07 10:11:58', '2023-06-07 10:14:15');
 
 -- --------------------------------------------------------
 
@@ -305,8 +306,12 @@ CREATE TABLE `faqs` (
 --
 
 INSERT INTO `faqs` (`id`, `title`, `question_en`, `question_ar`, `answer_en`, `answer_ar`, `slug`, `image`, `description`, `meta_description`, `meta_description_ar`, `status`, `deleted_at`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`) VALUES
-(8, '', 'test en1', 'بالعربيةبالعربيةبالعربية', 'test answer12', 'بالعربيةبالعربيةبالعربية', 'wiv9qjspcf', NULL, '', NULL, NULL, 1, NULL, 1, 1, NULL, '2023-06-06 10:56:04', '2023-06-06 10:57:17'),
-(9, '', 'my sample question1', 'بالعربيةبالعربيةبالعربية11', 'my sample answer1', 'بالعربيةبالعربيةبالعربيةبالعربيةبالعربيةبالعربيةبالعربية1111', 'mysamplequestion', NULL, '', NULL, NULL, 1, NULL, 1, 1, NULL, '2023-06-06 10:58:42', '2023-06-06 10:59:08');
+(1, '', 'How to invest in Blomal Platform?', 'كيف تستثمر في منصة بلومال؟', 'Based in Jeddah, Saudi Arabia. Established in 2021, the firm\r\ninvests in various portfolios in stock funds, Sukuk, and various real estate funds. The assets of the firm are managed by the executive management team.', 'مقرها في جدة ، المملكة العربية السعودية. تأسست الشركة عام 2021\r\nيستثمر في محافظ مختلفة في صناديق الأسهم والصكوك والصناديق العقارية المختلفة. يتم إدارة أصول الشركة من قبل فريق الإدارة التنفيذية.', 'howtoinvestinblomalplatform', NULL, '', NULL, NULL, 1, NULL, 1, 1, NULL, '2023-06-07 08:42:51', '2023-06-07 09:26:42'),
+(2, '', 'How can I get the investment returns?', 'كيف يمكنني الحصول على عوائد الاستثمار؟', 'blomal capital', 'بلومال كابيتال', 'howcanigettheinvestmentreturns', NULL, '', NULL, NULL, 1, NULL, 1, NULL, NULL, '2023-06-07 08:45:28', '2023-06-07 08:45:28'),
+(3, '', 'How can I know the latest updates on the new opportunities?', 'كيف يمكنني معرفة آخر التحديثات حول الفرص الجديدة؟', 'Investors are notified through e-mail and the platform\'s various social media channels.', 'يتم اشعار المستثمرين من خلال البريد الإلكتروني، وقنوات وسائل التواصل الاجتماعي المختلفة للمنصة.', 'howcaniknowthelatestupdatesonthenewopportunities', NULL, '', NULL, NULL, 1, NULL, 1, NULL, NULL, '2023-06-07 08:47:09', '2023-06-07 08:47:09'),
+(4, '', 'Are returns guaranteed?', 'هل العوائد مضمونة؟', 'The terms and conditions for each fund indicate the dividend distribution period, please review them before making an investment decision.', 'الشروط والاحكام الخاصة بكل صندوق توضح فترة توزيع الأرباح، يرجى الاطلاع عليها قبل اتخاذ القرار الاستثماري.', 'arereturnsguaranteed', NULL, '', NULL, NULL, 1, NULL, 1, NULL, NULL, '2023-06-07 08:49:21', '2023-06-07 08:49:21'),
+(5, '', 'What is the minimum investment?', 'ما هو الحد الأدنى للاستثمار؟', 'The minimum investment is 1,000 Saudi riyals, and sometimes the fund may require a limit that exceeds that.', 'الحد الأدنى للاستثمار هو 1000 ريال سعودي، وفي بعض الأحيان قد يشترط الصندوق حدا يتجاوز ذلك.', 'whatistheminimuminvestment', NULL, '', NULL, NULL, 1, NULL, 1, NULL, NULL, '2023-06-07 09:01:37', '2023-06-07 09:01:37'),
+(6, '', 'Are the operations on the platform in accordance with Islamic law?', 'هل العمليات في المنصة مطابقة للشريعة الإسلامية ؟', 'Yes, all transactions carried out through the platform are in compliance with Islamic law.', 'نعم، جميع العمليات التي تتم من خلال المنصة هي مطابقة للشريعة الإسلامية.', 'aretheoperationsontheplatforminaccordancewithislamiclaw', NULL, '', NULL, NULL, 1, NULL, 1, NULL, NULL, '2023-06-07 09:04:02', '2023-06-07 09:04:02');
 
 -- --------------------------------------------------------
 
@@ -420,6 +425,7 @@ CREATE TABLE `model_has_roles` (
 INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
 (2, 'App\\Models\\Admin', 1),
 (2, 'App\\Models\\Admin', 2),
+(2, 'App\\Models\\Admin', 4),
 (3, 'App\\Models\\Admin', 3),
 (4, 'App\\Models\\Admin', 1);
 
@@ -523,6 +529,12 @@ CREATE TABLE `pages` (
   `our_mission_ar` text DEFAULT NULL,
   `our_vision_en` text DEFAULT NULL,
   `our_vision_ar` text DEFAULT NULL,
+  `terms_en` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `terms_ar` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `privacy_en` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `privacy_ar` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `disclosure_policy_en` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `disclosure_policy_ar` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `meta_description` text DEFAULT NULL,
   `meta_description_ar` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `image` varchar(191) DEFAULT NULL,
@@ -542,11 +554,12 @@ CREATE TABLE `pages` (
 -- Dumping data for table `pages`
 --
 
-INSERT INTO `pages` (`id`, `title`, `slug`, `banner_title_en`, `banner_title_ar`, `banner_description_en`, `banner_description_ar`, `description`, `investment_description_ar`, `who_we_are_ar`, `our_mission_en`, `our_mission_ar`, `our_vision_en`, `our_vision_ar`, `meta_description`, `meta_description_ar`, `image`, `banner_image`, `category_id`, `article_type_id`, `status`, `deleted_at`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`) VALUES
-(1, 'Home', 'home', 'Build Wealth with Real Estate Crowdfunding', 'بناء الثروة من خلال التمويل الجماعي العقاري', 'Get access to high-quality commercial real estate deals whether you’re a retail or institutional investor', 'احصل على إمكانية الوصول إلى صفقات عقارية تجارية عالية الجودة سواء كنت مستثمرًا بالتجزئة أو مستثمرًا مؤسسيًا', '', NULL, NULL, NULL, NULL, NULL, NULL, 'Blomal Financial LLC is a Saudi company licensed by the Ministry of Commerce, under license number 4030443697 under the procedures for obtaining a permit from the Capital Market Authority.', 'Blomal Financial LLC هي شركة سعودية مرخصة من قبل وزارة التجارة ، بموجب ترخيص رقم 4030443697 بموجب إجراءات الحصول على تصريح من هيئة السوق المالية.', NULL, NULL, NULL, NULL, 1, NULL, 1, 1, NULL, '2023-05-29 09:05:02', '2023-06-05 09:14:23'),
-(2, 'About Us', 'about-us', 'Blomal Story', 'قصة بلومال', 'We’re here to help demystify the real estate investment process with an in-house team of experts that handle the portfolio through each phase.', 'نحن هنا للمساعدة في إزالة الغموض عن عملية الاستثمار العقاري من خلال فريق داخلي من الخبراء يتعامل مع المحفظة خلال كل مرحلة', 'We’re here to help demystify the real estate investment process with an in-house team of experts that handle the portfolio through each phase.', NULL, 'نحن هنا للمساعدة في إزالة الغموض عن عملية الاستثمار العقاري من خلال فريق داخلي من الخبراء يتعامل مع المحفظة خلال كل مرحلة', 'based in Jeddah, Saudi Arabia. Established in 2021, the firm invests in various portfolios in stock funds, Sukuk, and various real estate funds. The assets of the firm are managed by the executive management team.', 'مقرها في جدة ، المملكة العربية السعودية. تأسست الشركة عام 2021 ، وتستثمر في محافظ مختلفة في صناديق الأسهم والصكوك والصناديق العقارية المختلفة. يتم إدارة أصول الشركة من قبل فريق الإدارة التنفيذية.', 'based in Jeddah, Saudi Arabia. Established in 2021, the firm invests in various portfolios in stock funds, Sukuk, and various real estate funds. The assets of the firm are managed by the executive management team.', 'مقرها في جدة ، المملكة العربية السعودية. تأسست الشركة عام 2021 ، وتستثمر في محافظ مختلفة في صناديق الأسهم والصكوك والصناديق العقارية المختلفة. يتم إدارة أصول الشركة من قبل فريق الإدارة التنفيذية.', 'Blomal Financial LLC is a Saudi company licensed by the Ministry of Commerce, under license number 4030443697 under the procedures for obtaining a permit from the Capital Market Authority.', 'Blomal Financial LLC هي شركة سعودية مرخصة من قبل وزارة التجارة ، بموجب ترخيص رقم 4030443697 بموجب إجراءات الحصول على تصريح من هيئة السوق المالية.', 'About Us-1684919652-logo.png', NULL, NULL, NULL, 1, NULL, NULL, 1, NULL, '2023-05-23 07:07:28', '2023-06-05 09:14:37'),
-(3, 'Investment', 'investment', 'Investment Opportunities', 'فرص الاستثمار', 'We’re here to help demystify the real estate investment process with an in-house team of experts that handle the portfolio through each phase', 'نحن هنا للمساعدة في إزالة الغموض عن عملية الاستثمار العقاري من خلال فريق داخلي من الخبراء يتعامل مع المحفظة خلال كل مرحلة', 'investment opportunity that matches your priorities.', 'فرصة استثمارية تتناسب مع أولوياتك', NULL, NULL, NULL, NULL, NULL, 'Blomal Financial LLC is a Saudi company licensed by the Ministry of Commerce, under license number 4030443697 under the procedures for obtaining a permit from the Capital Market Authority.', 'Blomal Financial LLC هي شركة سعودية مرخصة من قبل وزارة التجارة ، بموجب ترخيص رقم 4030443697 بموجب إجراءات الحصول على تصريح من هيئة السوق المالية.', NULL, NULL, NULL, NULL, 1, NULL, 1, 1, NULL, '2023-05-29 09:05:02', '2023-06-05 09:39:07'),
-(4, 'Faqs', 'faqs', 'Frequently Asked Questions', 'أسئلة مكررة', 'We’re here to help demystify the real estate investment process with an in-house team of experts that handle the portfolio through each phase.', 'نحن هنا للمساعدة في إزالة الغموض عن عملية الاستثمار العقاري من خلال فريق داخلي من الخبراء يتعامل مع المحفظة خلال كل مرحلة', '', NULL, NULL, NULL, NULL, NULL, NULL, 'Blomal Financial LLC is a Saudi company licensed by the Ministry of Commerce, under license number 4030443697 under the procedures for obtaining a permit from the Capital Market Authority.', 'Blomal Financial LLC هي شركة سعودية مرخصة من قبل وزارة التجارة ، بموجب ترخيص رقم 4030443697 بموجب إجراءات الحصول على تصريح من هيئة السوق المالية.', NULL, NULL, NULL, NULL, 1, NULL, 1, 1, NULL, '2023-05-29 09:05:02', '2023-06-05 10:21:38');
+INSERT INTO `pages` (`id`, `title`, `slug`, `banner_title_en`, `banner_title_ar`, `banner_description_en`, `banner_description_ar`, `description`, `investment_description_ar`, `who_we_are_ar`, `our_mission_en`, `our_mission_ar`, `our_vision_en`, `our_vision_ar`, `terms_en`, `terms_ar`, `privacy_en`, `privacy_ar`, `disclosure_policy_en`, `disclosure_policy_ar`, `meta_description`, `meta_description_ar`, `image`, `banner_image`, `category_id`, `article_type_id`, `status`, `deleted_at`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`) VALUES
+(1, 'Home', 'home', 'Build Wealth with Real Estate Crowdfunding', 'بناء الثروة من خلال التمويل الجماعي العقاري', 'Get access to high-quality commercial real estate deals whether you’re a retail or institutional investor', 'احصل على إمكانية الوصول إلى صفقات عقارية تجارية عالية الجودة سواء كنت مستثمرًا بالتجزئة أو مستثمرًا مؤسسيًا', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Blomal Financial LLC is a Saudi company licensed by the Ministry of Commerce, under license number 4030443697 under the procedures for obtaining a permit from the Capital Market Authority.', 'Blomal Financial LLC هي شركة سعودية مرخصة من قبل وزارة التجارة ، بموجب ترخيص رقم 4030443697 بموجب إجراءات الحصول على تصريح من هيئة السوق المالية.', NULL, NULL, NULL, NULL, 1, NULL, 1, 4, NULL, '2023-05-29 09:05:02', '2023-06-07 10:16:11'),
+(2, 'About Us', 'about-us', 'Blomal Story', 'قصة بلومال', 'We’re here to help demystify the real estate investment process with an in-house team of experts that handle the portfolio through each phase.', 'نحن هنا للمساعدة في إزالة الغموض عن عملية الاستثمار العقاري من خلال فريق داخلي من الخبراء يتعامل مع المحفظة خلال كل مرحلة', 'We’re here to help demystify the real estate investment process with an in-house team of experts that handle the portfolio through each phase.', NULL, 'نحن هنا للمساعدة في إزالة الغموض عن عملية الاستثمار العقاري من خلال فريق داخلي من الخبراء يتعامل مع المحفظة خلال كل مرحلة', 'based in Jeddah, Saudi Arabia. Established in 2021, the firm invests in various portfolios in stock funds, Sukuk, and various real estate funds. The assets of the firm are managed by the executive management team.', 'مقرها في جدة ، المملكة العربية السعودية. تأسست الشركة عام 2021 ، وتستثمر في محافظ مختلفة في صناديق الأسهم والصكوك والصناديق العقارية المختلفة. يتم إدارة أصول الشركة من قبل فريق الإدارة التنفيذية.', 'based in Jeddah, Saudi Arabia. Established in 2021, the firm invests in various portfolios in stock funds, Sukuk, and various real estate funds. The assets of the firm are managed by the executive management team.', 'مقرها في جدة ، المملكة العربية السعودية. تأسست الشركة عام 2021 ، وتستثمر في محافظ مختلفة في صناديق الأسهم والصكوك والصناديق العقارية المختلفة. يتم إدارة أصول الشركة من قبل فريق الإدارة التنفيذية.', NULL, NULL, NULL, NULL, NULL, NULL, 'Blomal Financial LLC is a Saudi company licensed by the Ministry of Commerce, under license number 4030443697 under the procedures for obtaining a permit from the Capital Market Authority.', 'Blomal Financial LLC هي شركة سعودية مرخصة من قبل وزارة التجارة ، بموجب ترخيص رقم 4030443697 بموجب إجراءات الحصول على تصريح من هيئة السوق المالية.', 'About Us-1684919652-logo.png', NULL, NULL, NULL, 1, NULL, NULL, 1, NULL, '2023-05-23 07:07:28', '2023-06-05 09:14:37'),
+(3, 'Investment', 'investment', 'Investment Opportunities', 'فرص الاستثمار', 'We’re here to help demystify the real estate investment process with an in-house team of experts that handle the portfolio through each phase', 'نحن هنا للمساعدة في إزالة الغموض عن عملية الاستثمار العقاري من خلال فريق داخلي من الخبراء يتعامل مع المحفظة خلال كل مرحلة', 'investment opportunity that matches your priorities.', 'فرصة استثمارية تتناسب مع أولوياتك', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Blomal Financial LLC is a Saudi company licensed by the Ministry of Commerce, under license number 4030443697 under the procedures for obtaining a permit from the Capital Market Authority.', 'Blomal Financial LLC هي شركة سعودية مرخصة من قبل وزارة التجارة ، بموجب ترخيص رقم 4030443697 بموجب إجراءات الحصول على تصريح من هيئة السوق المالية.', NULL, NULL, NULL, NULL, 1, NULL, 1, 1, NULL, '2023-05-29 09:05:02', '2023-06-05 09:39:07'),
+(4, 'Faqs', 'faqs', 'Frequently Asked Questions', 'أسئلة مكررة', 'We’re here to help demystify the real estate investment process with an in-house team of experts that handle the portfolio through each phase.', 'نحن هنا للمساعدة في إزالة الغموض عن عملية الاستثمار العقاري من خلال فريق داخلي من الخبراء يتعامل مع المحفظة خلال كل مرحلة', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Blomal Financial LLC is a Saudi company licensed by the Ministry of Commerce, under license number 4030443697 under the procedures for obtaining a permit from the Capital Market Authority.', 'Blomal Financial LLC هي شركة سعودية مرخصة من قبل وزارة التجارة ، بموجب ترخيص رقم 4030443697 بموجب إجراءات الحصول على تصريح من هيئة السوق المالية.', NULL, NULL, NULL, NULL, 1, NULL, 1, 1, NULL, '2023-05-29 09:05:02', '2023-06-05 10:21:38'),
+(20, 'Terms & Conditions', 'terms', 'TERMS & CONDITIONS en11', 'TERMS & CONDITIONS ar1111', 'TERMS & CONDITIONS desc en1', '1TERMS & CONDITIONS desc ar', '', NULL, NULL, NULL, NULL, NULL, NULL, '<p>term en1</p>', '<p><strong>صفحة الاختبار الخاصة بي</strong></p>\r\n<p></p>\r\n<p>صفحة الاختبار الخاصة بي</p>\r\n<ul>\r\n<li>صفحة الاختبار الخاصة بي</li>\r\n<li>صفحة الاختبار الخاصة بي</li>\r\n</ul>', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 1, 1, NULL, '2023-05-29 09:05:02', '2023-06-07 10:59:05');
 
 -- --------------------------------------------------------
 
@@ -616,10 +629,10 @@ INSERT INTO `permissions` (`id`, `name`, `guard_name`, `group_name`, `created_at
 (34, 'booking_request.view', 'admin', 'booking_request', '2023-05-23 07:07:28', '2023-05-23 07:07:28'),
 (35, 'booking_request.edit', 'admin', 'booking_request', '2023-05-23 07:07:28', '2023-05-23 07:07:28'),
 (36, 'booking_request.delete', 'admin', 'booking_request', '2023-05-23 07:07:28', '2023-05-23 07:07:28'),
-(37, 'blog.view', 'admin', 'blog', '2023-05-23 07:07:28', '2023-05-23 07:07:28'),
-(38, 'blog.create', 'admin', 'blog', '2023-05-23 07:07:28', '2023-05-23 07:07:28'),
-(39, 'blog.edit', 'admin', 'blog', '2023-05-23 07:07:28', '2023-05-23 07:07:28'),
-(40, 'blog.delete', 'admin', 'blog', '2023-05-23 07:07:28', '2023-05-23 07:07:28'),
+(37, 'faq.view', 'admin', 'faq', '2023-05-23 07:07:28', '2023-05-23 07:07:28'),
+(38, 'faq.create', 'admin', 'faq', '2023-05-23 07:07:28', '2023-05-23 07:07:28'),
+(39, 'faq.edit', 'admin', 'faq', '2023-05-23 07:07:28', '2023-05-23 07:07:28'),
+(40, 'faq.delete', 'admin', 'faq', '2023-05-23 07:07:28', '2023-05-23 07:07:28'),
 (41, 'slider.view', 'admin', 'slider', '2023-05-23 07:07:28', '2023-05-23 07:07:28'),
 (42, 'slider.create', 'admin', 'slider', '2023-05-23 07:07:28', '2023-05-23 07:07:28'),
 (43, 'slider.edit', 'admin', 'slider', '2023-05-23 07:07:28', '2023-05-23 07:07:28'),
@@ -678,6 +691,7 @@ CREATE TABLE `role_has_permissions` (
 --
 
 INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
+(1, 2),
 (1, 3),
 (1, 4),
 (2, 4),
@@ -690,15 +704,21 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 (9, 4),
 (10, 4),
 (11, 4),
+(12, 2),
 (12, 4),
+(13, 2),
 (13, 4),
 (14, 4),
 (15, 4),
 (16, 4),
 (17, 4),
+(18, 2),
 (18, 4),
+(19, 2),
 (19, 4),
+(20, 2),
 (20, 4),
+(21, 2),
 (21, 4),
 (22, 3),
 (22, 4),
@@ -708,12 +728,16 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 (24, 4),
 (25, 3),
 (25, 4),
+(26, 2),
 (26, 3),
 (26, 4),
+(27, 2),
 (27, 3),
 (27, 4),
+(28, 2),
 (28, 3),
 (28, 4),
+(29, 2),
 (29, 3),
 (29, 4),
 (30, 3),
@@ -730,6 +754,7 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 (35, 4),
 (36, 3),
 (36, 4),
+(37, 2),
 (37, 4),
 (38, 4),
 (39, 4),
@@ -746,10 +771,15 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 (50, 4),
 (51, 4),
 (52, 4),
+(53, 2),
 (53, 4),
+(54, 2),
 (54, 4),
+(55, 2),
 (55, 4),
+(56, 2),
 (56, 4),
+(57, 2),
 (57, 4);
 
 -- --------------------------------------------------------
@@ -797,7 +827,7 @@ CREATE TABLE `settings` (
   `group` varchar(191) NOT NULL,
   `name` varchar(191) NOT NULL,
   `locked` tinyint(1) NOT NULL,
-  `payload` longtext DEFAULT NULL,
+  `payload` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -807,33 +837,33 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `group`, `name`, `locked`, `payload`, `created_at`, `updated_at`) VALUES
-(1, 'general', 'name', 0, '\"Blomal CMS\"', '2023-05-23 07:07:28', '2023-05-24 09:54:18'),
-(2, 'general', 'logo', 0, '\"logo.png\"', '2023-05-23 07:07:28', '2023-05-24 09:54:18'),
-(3, 'general', 'favicon', 0, '\"favicon.ico\"', '2023-05-23 07:07:28', '2023-05-24 09:54:18'),
-(4, 'general', 'description', 0, 'null', '2023-05-23 07:07:28', '2023-05-24 09:54:18'),
-(5, 'general', 'copyright_text', 0, '\"&copy;2023 all rights reserved.\"', '2023-05-23 07:07:28', '2023-05-24 09:54:18'),
-(6, 'general', 'meta_keywords', 0, 'null', '2023-05-23 07:07:28', '2023-05-24 09:54:18'),
-(7, 'general', 'meta_description', 0, 'null', '2023-05-23 07:07:28', '2023-05-24 09:54:18'),
-(8, 'general', 'meta_author', 0, 'null', '2023-05-23 07:07:28', '2023-05-24 09:54:18'),
-(9, 'contact', 'contact_no', 0, '\"+966542816280\"', '2023-05-23 07:07:28', '2023-05-24 09:54:18'),
-(10, 'contact', 'phone', 0, '\"+966542816280\"', '2023-05-23 07:07:28', '2023-05-24 09:54:18'),
-(11, 'contact', 'email_primary', 0, '\"info@blomal.com\"', '2023-05-23 07:07:28', '2023-05-24 09:54:18'),
-(12, 'contact', 'email_secondary', 0, '\"info@blomal.com\"', '2023-05-23 07:07:28', '2023-05-24 09:54:18'),
-(13, 'contact', 'address', 0, '\"7917 Abi Tamim Al Musawi St, Ash Sheraa Dist \\r\\n\\r\\nJeddah, 23816\"', '2023-05-23 07:07:28', '2023-05-24 09:54:18'),
-(14, 'contact', 'working_day_hours', 0, '\"7917 Abi Tamim Al Musawi St, Ash Sheraa Dist \\r\\n\\r\\nJeddah, 23816\"', '2023-05-23 07:07:28', '2023-05-24 09:54:18'),
-(15, 'contact', 'map_lat', 0, 'null', '2023-05-23 07:07:28', '2023-05-24 09:54:18'),
-(16, 'contact', 'map_long', 0, 'null', '2023-05-23 07:07:28', '2023-05-24 09:54:18'),
-(17, 'contact', 'map_zoom', 0, '\"11\"', '2023-05-23 07:07:28', '2023-05-24 09:54:18'),
-(18, 'social', 'facebook', 0, '\"https:\\/\\/facebook.com\\/example\"', '2023-05-23 07:07:28', '2023-05-24 09:54:18'),
-(19, 'social', 'twitter', 0, '\"https:\\/\\/twitter.com\\/\"', '2023-05-23 07:07:28', '2023-05-24 09:54:18'),
-(20, 'social', 'youtube', 0, '\"https:\\/\\/youtube.com\\/\"', '2023-05-23 07:07:28', '2023-05-24 09:54:18'),
-(21, 'social', 'linkedin', 0, '\"https:\\/\\/linkedin.com\\/\"', '2023-05-23 07:07:28', '2023-05-24 09:54:18'),
-(22, 'social', 'pinterest', 0, '\"https:\\/\\/pinterest.com\\/\"', '2023-05-23 07:07:28', '2023-05-24 09:54:18'),
-(23, 'social', 'instagram', 0, '\"https:\\/\\/instagram.com\\/\"', '2023-05-23 07:07:28', '2023-05-24 09:54:18'),
-(24, 'contact', 'contact_us_en', 0, '\"We are here to help demystify the real estate investment process with an in-house team of experts that handle the portfolio through phase\"', '2023-05-23 07:07:28', '2023-05-24 09:54:18'),
-(25, 'contact', 'contact_us_ar', 0, '\"\\u0646\\u062d\\u0646 \\u0647\\u0646\\u0627 \\u0644\\u0644\\u0645\\u0633\\u0627\\u0639\\u062f\\u0629 \\u0641\\u064a \\u0625\\u0632\\u0627\\u0644\\u0629 \\u0627\\u0644\\u063a\\u0645\\u0648\\u0636 \\u0639\\u0646 \\u0639\\u0645\\u0644\\u064a\\u0629 \\u0627\\u0644\\u0627\\u0633\\u062a\\u062b\\u0645\\u0627\\u0631 \\u0627\\u0644\\u0639\\u0642\\u0627\\u0631\\u064a \\u0645\\u0646 \\u062e\\u0644\\u0627\\u0644 \\u0641\\u0631\\u064a\\u0642 \\u062f\\u0627\\u062e\\u0644\\u064a \\u0645\\u0646 \\u0627\\u0644\\u062e\\u0628\\u0631\\u0627\\u0621 \\u064a\\u062a\\u0639\\u0627\\u0645\\u0644 \\u0645\\u0639 \\u0627\\u0644\\u0645\\u062d\\u0641\\u0638\\u0629 \\u062e\\u0644\\u0627\\u0644 \\u0627\\u0644\\u0645\\u0631\\u062d\\u0644\\u0629\"', '2023-05-23 07:07:28', '2023-05-24 09:54:18'),
-(26, 'general', 'footer_en', 0, '\"Blomnal Financial LLC is a Saudi company licensed by the Ministry of Commerce, Under license number 4030443697 under the procedure s for obtaining a permit from the Capital Market Authority.\"', '2023-05-23 07:07:28', '2023-05-24 09:54:18'),
-(27, 'general', 'footer_ar', 0, '\"Blomnal Financial LLC \\u0647\\u064a \\u0634\\u0631\\u0643\\u0629 \\u0633\\u0639\\u0648\\u062f\\u064a\\u0629 \\u0645\\u0631\\u062e\\u0635\\u0629 \\u0645\\u0646 \\u0642\\u0628\\u0644 \\u0648\\u0632\\u0627\\u0631\\u0629 \\u0627\\u0644\\u062a\\u062c\\u0627\\u0631\\u0629 \\u060c \\u0628\\u0645\\u0648\\u062c\\u0628 \\u062a\\u0631\\u062e\\u064a\\u0635 \\u0631\\u0642\\u0645 4030443697 \\u0628\\u0645\\u0648\\u062c\\u0628 \\u0625\\u062c\\u0631\\u0627\\u0621\\u0627\\u062a \\u0627\\u0644\\u062d\\u0635\\u0648\\u0644 \\u0639\\u0644\\u0649 \\u062a\\u0635\\u0631\\u064a\\u062d \\u0645\\u0646 \\u0647\\u064a\\u0626\\u0629 \\u0627\\u0644\\u0633\\u0648\\u0642 \\u0627\\u0644\\u0645\\u0627\\u0644\\u064a\\u0629.\"', '2023-05-23 07:07:28', '2023-05-24 09:54:18');
+(1, 'general', 'name', 0, '\"Blomal CMS\"', '2023-05-23 07:07:28', '2023-06-07 10:24:16'),
+(2, 'general', 'logo', 0, '\"logo.png\"', '2023-05-23 07:07:28', '2023-06-07 10:24:16'),
+(3, 'general', 'favicon', 0, '\"favicon.ico\"', '2023-05-23 07:07:28', '2023-06-07 10:24:16'),
+(4, 'general', 'description', 0, 'null', '2023-05-23 07:07:28', '2023-06-07 10:24:16'),
+(5, 'general', 'copyright_text', 0, '\"&copy;2023 all rights reserved.\"', '2023-05-23 07:07:28', '2023-06-07 10:24:16'),
+(6, 'general', 'meta_keywords', 0, 'null', '2023-05-23 07:07:28', '2023-06-07 10:24:16'),
+(7, 'general', 'meta_description', 0, 'null', '2023-05-23 07:07:28', '2023-06-07 10:24:16'),
+(8, 'general', 'meta_author', 0, 'null', '2023-05-23 07:07:28', '2023-06-07 10:24:16'),
+(9, 'contact', 'contact_no', 0, '\"+966542816280\"', '2023-05-23 07:07:28', '2023-06-07 10:24:16'),
+(10, 'contact', 'phone', 0, '\"+966542816280\"', '2023-05-23 07:07:28', '2023-06-07 10:24:16'),
+(11, 'contact', 'email_primary', 0, '\"info@blomal.com\"', '2023-05-23 07:07:28', '2023-06-07 10:24:16'),
+(12, 'contact', 'email_secondary', 0, '\"info@blomal.com\"', '2023-05-23 07:07:28', '2023-06-07 10:24:16'),
+(13, 'contact', 'address', 0, '\"7917 Abi Tamim Al Musawi St, Ash Sheraa Dist \\r\\n\\r\\nJeddah, 23816\"', '2023-05-23 07:07:28', '2023-06-07 10:24:16'),
+(14, 'contact', 'working_day_hours', 0, '\"7917 Abi Tamim Al Musawi St, Ash Sheraa Dist \\r\\n\\r\\nJeddah, 23816\"', '2023-05-23 07:07:28', '2023-06-07 10:24:16'),
+(15, 'contact', 'map_lat', 0, 'null', '2023-05-23 07:07:28', '2023-06-07 10:24:16'),
+(16, 'contact', 'map_long', 0, 'null', '2023-05-23 07:07:28', '2023-06-07 10:24:16'),
+(17, 'contact', 'map_zoom', 0, '\"11\"', '2023-05-23 07:07:28', '2023-06-07 10:24:16'),
+(18, 'social', 'facebook', 0, '\"https:\\/\\/facebook.com\\/example\"', '2023-05-23 07:07:28', '2023-06-07 10:24:16'),
+(19, 'social', 'twitter', 0, '\"https:\\/\\/twitter.com\\/\"', '2023-05-23 07:07:28', '2023-06-07 10:24:16'),
+(20, 'social', 'youtube', 0, '\"https:\\/\\/youtube.com\\/\"', '2023-05-23 07:07:28', '2023-06-07 10:24:16'),
+(21, 'social', 'linkedin', 0, '\"https:\\/\\/linkedin.com\\/\"', '2023-05-23 07:07:28', '2023-06-07 10:24:16'),
+(22, 'social', 'pinterest', 0, '\"https:\\/\\/pinterest.com\\/\"', '2023-05-23 07:07:28', '2023-06-07 10:24:16'),
+(23, 'social', 'instagram', 0, '\"https:\\/\\/instagram.com\\/\"', '2023-05-23 07:07:28', '2023-06-07 10:24:16'),
+(24, 'contact', 'contact_us_en', 0, '\"We are here to help demystify the real estate investment process with an in-house team of experts that handle the portfolio through phase\"', '2023-05-23 07:07:28', '2023-06-07 10:24:16'),
+(25, 'contact', 'contact_us_ar', 0, '\"\\u0646\\u062d\\u0646 \\u0647\\u0646\\u0627 \\u0644\\u0644\\u0645\\u0633\\u0627\\u0639\\u062f\\u0629 \\u0641\\u064a \\u0625\\u0632\\u0627\\u0644\\u0629 \\u0627\\u0644\\u063a\\u0645\\u0648\\u0636 \\u0639\\u0646 \\u0639\\u0645\\u0644\\u064a\\u0629 \\u0627\\u0644\\u0627\\u0633\\u062a\\u062b\\u0645\\u0627\\u0631 \\u0627\\u0644\\u0639\\u0642\\u0627\\u0631\\u064a \\u0645\\u0646 \\u062e\\u0644\\u0627\\u0644 \\u0641\\u0631\\u064a\\u0642 \\u062f\\u0627\\u062e\\u0644\\u064a \\u0645\\u0646 \\u0627\\u0644\\u062e\\u0628\\u0631\\u0627\\u0621 \\u064a\\u062a\\u0639\\u0627\\u0645\\u0644 \\u0645\\u0639 \\u0627\\u0644\\u0645\\u062d\\u0641\\u0638\\u0629 \\u062e\\u0644\\u0627\\u0644 \\u0627\\u0644\\u0645\\u0631\\u062d\\u0644\\u0629\"', '2023-05-23 07:07:28', '2023-06-07 10:24:16'),
+(26, 'general', 'footer_en', 0, '\"Blomnal Financial LLC is a Saudi company licensed by the Ministry of Commerce, Under license number 4030443697 under the procedure s for obtaining a permit from the Capital Market Authority.\"', '2023-05-23 07:07:28', '2023-06-07 10:24:16'),
+(27, 'general', 'footer_ar', 0, '\"Blomnal Financial LLC \\u0647\\u064a \\u0634\\u0631\\u0643\\u0629 \\u0633\\u0639\\u0648\\u062f\\u064a\\u0629 \\u0645\\u0631\\u062e\\u0635\\u0629 \\u0645\\u0646 \\u0642\\u0628\\u0644 \\u0648\\u0632\\u0627\\u0631\\u0629 \\u0627\\u0644\\u062a\\u062c\\u0627\\u0631\\u0629 \\u060c \\u0628\\u0645\\u0648\\u062c\\u0628 \\u062a\\u0631\\u062e\\u064a\\u0635 \\u0631\\u0642\\u0645 4030443697 \\u0628\\u0645\\u0648\\u062c\\u0628 \\u0625\\u062c\\u0631\\u0627\\u0621\\u0627\\u062a \\u0627\\u0644\\u062d\\u0635\\u0648\\u0644 \\u0639\\u0644\\u0649 \\u062a\\u0635\\u0631\\u064a\\u062d \\u0645\\u0646 \\u0647\\u064a\\u0626\\u0629 \\u0627\\u0644\\u0633\\u0648\\u0642 \\u0627\\u0644\\u0645\\u0627\\u0644\\u064a\\u0629.\"', '2023-05-23 07:07:28', '2023-06-07 10:24:16');
 
 -- --------------------------------------------------------
 
@@ -1010,7 +1040,38 @@ INSERT INTO `tracks` (`id`, `title`, `description`, `reference_link`, `admin_id`
 (150, 'test en', 'Faq has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-06 10:57:03', '2023-06-06 10:57:03'),
 (151, 'test en1', 'Faq has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-06 10:57:17', '2023-06-06 10:57:17'),
 (152, 'my sample question', 'New Faq has been created', NULL, 1, NULL, NULL, '2023-06-06 10:58:42', '2023-06-06 10:58:42'),
-(153, 'my sample question1', 'Faq has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-06 10:59:08', '2023-06-06 10:59:08');
+(153, 'my sample question1', 'Faq has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-06 10:59:08', '2023-06-06 10:59:08'),
+(154, 'my test question', 'New Faq has been created', NULL, 1, NULL, NULL, '2023-06-07 07:32:29', '2023-06-07 07:32:29'),
+(155, 'my test question', 'Faq has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-07 08:19:14', '2023-06-07 08:19:14'),
+(156, 'my test question -aa a', 'Faq has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-07 08:19:25', '2023-06-07 08:19:25'),
+(157, 'my test question -aa a', 'Faq has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-07 08:30:49', '2023-06-07 08:30:49'),
+(158, 'Home', 'Page has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-07 08:32:44', '2023-06-07 08:32:44'),
+(159, 'Home', 'Page has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-07 08:32:54', '2023-06-07 08:32:54'),
+(160, 'How to invest in Blomal Platform?', 'New Faq has been created', NULL, 1, NULL, NULL, '2023-06-07 08:42:51', '2023-06-07 08:42:51'),
+(161, 'How can I get the investment returns?', 'New Faq has been created', NULL, 1, NULL, NULL, '2023-06-07 08:45:28', '2023-06-07 08:45:28'),
+(162, 'How can I know the latest updates on the new opportunities?', 'New Faq has been created', NULL, 1, NULL, NULL, '2023-06-07 08:47:09', '2023-06-07 08:47:09'),
+(163, 'Are returns guaranteed?', 'New Faq has been created', NULL, 1, NULL, NULL, '2023-06-07 08:49:21', '2023-06-07 08:49:21'),
+(164, 'What is the minimum investment?', 'New Faq has been created', NULL, 1, NULL, NULL, '2023-06-07 09:01:37', '2023-06-07 09:01:37'),
+(165, 'Are the operations on the platform in accordance with Islamic law?', 'New Faq has been created', NULL, 1, NULL, NULL, '2023-06-07 09:04:02', '2023-06-07 09:04:02'),
+(166, 'How to invest in Blomal Platform?', 'Faq has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-07 09:12:44', '2023-06-07 09:12:44'),
+(167, 'How to invest in Blomal Platform?', 'Faq has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-07 09:25:54', '2023-06-07 09:25:54'),
+(168, 'How to invest in Blomal Platform?', 'Faq has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-07 09:26:00', '2023-06-07 09:26:00'),
+(169, 'How to invest in Blomal Platform?', 'Faq has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-07 09:26:18', '2023-06-07 09:26:18'),
+(170, 'How to invest in Blomal Platform?', 'Faq has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-07 09:26:42', '2023-06-07 09:26:42'),
+(171, 'zubairbobby', 'New Admin has been created', NULL, 1, NULL, NULL, '2023-06-07 10:11:58', '2023-06-07 10:11:58'),
+(172, 'Admin', 'Role has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-07 10:13:23', '2023-06-07 10:13:23'),
+(173, 'Admin', 'Role has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-07 10:13:59', '2023-06-07 10:13:59'),
+(174, 'zubairbobby', 'Admin has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-07 10:14:15', '2023-06-07 10:14:15'),
+(175, 'Admin', 'Role has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-07 10:15:17', '2023-06-07 10:15:17'),
+(176, 'Admin', 'Role has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-07 10:15:57', '2023-06-07 10:15:57'),
+(177, 'Home', 'Page has been updated successfully !!', NULL, 4, NULL, NULL, '2023-06-07 10:16:11', '2023-06-07 10:16:11'),
+(178, 'Admin', 'Role has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-07 10:16:26', '2023-06-07 10:16:26'),
+(179, 'Settings', 'Setting was updated.', NULL, 1, NULL, NULL, '2023-06-07 10:24:16', '2023-06-07 10:24:16'),
+(180, 'Terms & Conditions', 'Page has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-07 10:43:59', '2023-06-07 10:43:59'),
+(181, 'Terms & Conditions', 'Page has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-07 10:44:10', '2023-06-07 10:44:10'),
+(182, 'Terms & Conditions', 'Page has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-07 10:44:20', '2023-06-07 10:44:20'),
+(183, 'Terms & Conditions', 'Page has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-07 10:57:44', '2023-06-07 10:57:44'),
+(184, 'Terms & Conditions', 'Page has been updated successfully !!', NULL, 1, NULL, NULL, '2023-06-07 10:59:05', '2023-06-07 10:59:05');
 
 -- --------------------------------------------------------
 
@@ -1278,7 +1339,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `article_types`
@@ -1332,7 +1393,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `faqs`
 --
 ALTER TABLE `faqs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `languages`
@@ -1362,7 +1423,7 @@ ALTER TABLE `oauth_personal_access_clients`
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -1392,7 +1453,7 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT for table `tracks`
 --
 ALTER TABLE `tracks`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=154;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=185;
 
 --
 -- AUTO_INCREMENT for table `users`
