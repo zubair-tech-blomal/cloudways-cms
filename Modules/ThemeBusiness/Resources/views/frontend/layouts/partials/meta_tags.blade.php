@@ -1,3 +1,3 @@
-<meta name="keywords" content="Business Website Template">
-<meta name="description" content="Business Website Template">
-<meta name="author" content="Maniruzzaman Akash"
+<meta name="keywords" content="Blomal CMS">
+<meta name="description" content="Blomal CMS">
+<meta name="author" content="Blomal"

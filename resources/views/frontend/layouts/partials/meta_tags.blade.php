@@ -1,3 +1,3 @@
-<meta name="keywords" content="Lara Admin" />
-<meta name="description" content="LaraAdmin - A Project of Laravel Basic Features">
-<meta name="author" content="Maniruzzaman Akash">
+<meta name="keywords" content="Blomal CMS" />
+<meta name="description" content="Blomal CMS">
+<meta name="author" content="Blomal">
