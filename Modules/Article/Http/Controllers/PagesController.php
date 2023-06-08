@@ -278,6 +278,11 @@ class PagesController extends Controller
         }
         $page = Page::find($id);
         $categories = DB::table('categories')->select('id', 'name')->get();
+        if($page->slug=="terms" || $page->slug=="privacy" || $page->slug=="disclosure_policy")
+        {
+            return view('article::pages.termsandprivacy.show', compact('categories', 'page'));
+        }
+       
         return view('article::pages.show', compact('categories', 'page'));
     }
 
@@ -296,6 +301,12 @@ class PagesController extends Controller
         $page = Page::find($id);
         $categories = Category::printCategory($page->category_id);
         $article_types = ArticleType::all();
+        if($page->slug=="terms" || $page->slug=="privacy" || $page->slug=="disclosure_policy")
+        {
+           
+            return view('article::pages.termsandprivacy.edit', compact('categories', 'page', 'article_types'));
+
+        }
         return view('article::pages.edit', compact('categories', 'page', 'article_types'));
         //return $page;
         // if ($page->slug == "home") {
@@ -347,7 +358,21 @@ class PagesController extends Controller
             ]);
         }
 
-        if ($page->slug == "home" || $page->slug == "investment" ||  $page->slug == "faqs" || $page->slug == "terms") {
+        if ($page->slug == "privacy") {
+            $request->validate([
+                'privacy_en'  => 'required',
+                'privacy_ar'  => 'required',
+            ]);
+        }
+
+        if ($page->slug == "disclosure_policy") {
+            $request->validate([
+                'disclosure_policy_en'  => 'required',
+                'disclosure_policy_ar'  => 'required',
+            ]);
+        }
+
+        if ($page->slug == "home" || $page->slug == "investment" ||  $page->slug == "faqs" || $page->slug == "terms" || $page->slug=="privacy" || $page->slug=="disclosure_policy") {
             $request->validate([
                 'title'  => 'required|max:100',
             ]);
@@ -375,14 +400,24 @@ class PagesController extends Controller
                     $page->our_mission_en = $request->our_mission_en;
                     $page->our_mission_ar = $request->our_mission_ar;
                 } 
-                if ($page->slug == "investment") {
+                else if ($page->slug == "investment") {
                     $page->description = $request->description;
                     $page->investment_description_ar = $request->investment_description_ar;
                 }
 
-                if ($page->slug == "terms") {
+                else if ($page->slug == "terms") {
                     $page->terms_en = $request->terms_en;
                     $page->terms_ar = $request->terms_ar;
+                }
+
+                else if ($page->slug == "privacy") {
+                    $page->privacy_en = $request->privacy_en;
+                    $page->privacy_ar = $request->privacy_ar;
+                }
+
+                else if ($page->slug == "disclosure_policy") {
+                    $page->disclosure_policy_en = $request->disclosure_policy_en;
+                    $page->disclosure_policy_ar = $request->disclosure_policy_ar;
                 }
 
                 $page->meta_description = $request->meta_description;

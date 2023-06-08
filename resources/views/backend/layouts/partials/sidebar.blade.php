@@ -125,7 +125,7 @@
                 </li>
                 @endif
 
-                @if ($user->can('service.view') || $user->can('service.create'))
+                {{-- @if ($user->can('service.view') || $user->can('service.create'))
                 <li class="sidebar-item ">
                     <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="mdi mdi-arrow-right-drop-circle"></i>
@@ -151,7 +151,7 @@
                         @endif
                     </ul>
                 </li>
-                @endif
+                @endif --}}
 
                 {{-- @if ($user->can('booking_request.view') || $user->can('booking_request.edit') || $user->can('booking_request.delete'))
                 @php
