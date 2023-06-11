@@ -15,12 +15,12 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 // Auth::routes();
-// Route::get( '/', [ FrontPagesController::class, 'index' ] )->name( 'index' );
+ Route::get( '/', [ FrontPagesController::class, 'index' ] )->name( 'index' );
 
 
-Route::get('/', function () {
-    return redirect('/admin/login');
-});
+// Route::get('/', function () {
+//     return redirect('/admin/login');
+// });
 // Route::get('/', function () {
 //     return view('index');
 // });
