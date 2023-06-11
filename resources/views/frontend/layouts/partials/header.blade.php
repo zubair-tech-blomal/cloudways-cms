@@ -14,9 +14,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                {{-- <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.index') }}">Admin Panel</a>
-                </li> --}}
+                </li>
             </ul>
         </div>
     </div>

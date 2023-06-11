@@ -14,10 +14,10 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Auth::routes();
-// Route::get( '/', [ FrontPagesController::class, 'index' ] )->name( 'index' );
+Auth::routes();
+Route::get( '/', [ FrontPagesController::class, 'index' ] )->name( 'index' );
 
 
-Route::get('/', function () {
-    return redirect('/admin/login');
-});
+// Route::get('/', function () {
+//     return redirect('/admin/login');
+// });
