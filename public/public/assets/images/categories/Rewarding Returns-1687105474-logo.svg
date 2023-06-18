@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="vuesax_linear_card-pos" data-name="vuesax/linear/card-pos" transform="translate(-428 -508)">
+    <g id="card-pos" transform="translate(428 508)">
+      <path id="Vector" d="M0,11.95,11.95,0" transform="translate(6.539 6.538)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Vector-2" data-name="Vector" d="M0,1.2,1.2,0" transform="translate(14.996 23.072)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Vector-3" data-name="Vector" d="M0,2.39,2.39,0" transform="translate(18.899 18.085)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Vector-4" data-name="Vector" d="M2.242,11.533l9.3-9.3C14.506-.732,15.99-.746,18.93,2.195L25.8,9.069c2.94,2.94,2.926,4.424-.042,7.393l-9.3,9.3c-2.968,2.968-4.452,2.982-7.392.042L2.2,18.926C-.74,15.986-.74,14.516,2.242,11.533Z" transform="translate(2 2.001)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Vector-5" data-name="Vector" d="M0,0H28" transform="translate(2 29.999)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Vector-6" data-name="Vector" d="M0,0H32V32H0Z" fill="none" opacity="0"/>
+    </g>
+  </g>
+</svg>

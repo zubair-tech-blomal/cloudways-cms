@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <g id="vuesax_linear_profile-tick" data-name="vuesax/linear/profile-tick" transform="translate(-300 -252)">
+    <g id="profile-tick" transform="translate(300 252)">
+      <path id="Vector" d="M0,4.053,4.053,8.107,12.16,0" transform="translate(38.507 46.747)" fill="none" stroke="#09b79a" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <path id="Vector-2" data-name="Vector" d="M12.267,23.653a4.848,4.848,0,0,0-.88,0,11.827,11.827,0,1,1,.88,0Z" transform="translate(20.16 5.333)" fill="none" stroke="#09b79a" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <path id="Vector-3" data-name="Vector" d="M18.2,23.013a24.4,24.4,0,0,1-13.36-3.68c-6.453-4.32-6.453-11.36,0-15.653,7.333-4.907,19.36-4.907,26.693,0" transform="translate(13.773 35.147)" fill="none" stroke="#09b79a" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <path id="Vector-4" data-name="Vector" d="M0,0H64V64H0Z" transform="translate(64 64) rotate(180)" fill="none" opacity="0"/>
+    </g>
+  </g>
+</svg>

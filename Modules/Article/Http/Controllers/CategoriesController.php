@@ -67,7 +67,9 @@ class CategoriesController extends Controller
                                 $html = '<a class="btn waves-effect waves-light btn-success btn-sm btn-circle" title="Edit Category Details" href="' . route('admin.categories.edit', $row->id) . '"><i class="fa fa-edit"></i></a>';
                             }
                             if( $this->user->can('category.delete')) {
+                                if($row->parent_category_id != null || $row->parent_category_id !="" ){
                                 $html .= '<a class="btn waves-effect waves-light btn-danger btn-sm btn-circle ml-2 text-white" title="Delete Admin" id="deleteItem' . $row->id . '"><i class="fa fa-trash"></i></a>';
+                            }
                             }
                         } elseif($this->user->can('category.delete')) {
                             $deleteRoute =  route('admin.categories.trashed.destroy', [$row->id]);
@@ -81,7 +83,9 @@ class CategoriesController extends Controller
                                 <button type="button" class="btn waves-effect waves-light btn-rounded btn-secondary" data-dismiss="modal"><i
                                         class="fa fa-times"></i> Cancel</button>
                             </form>';
+                            if($row->parent_category_id != null || $row->parent_category_id !="" ){
                             $html .= '<a class="btn waves-effect waves-light btn-danger btn-sm btn-circle ml-2 text-white" title="Delete Category Permanently" id="deleteItemPermanent' . $row->id . '"><i class="fa fa-trash"></i></a>';
+                            }
                         }
 
 
