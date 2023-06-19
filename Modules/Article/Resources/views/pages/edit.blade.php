@@ -107,7 +107,7 @@
                     </div>
                     @endif
                     <!-- about us content -->
-                    @if($page->slug=="about-us")
+                    @if($page->slug=="about")
 
 
                     <div class="row">
@@ -210,7 +210,7 @@
                             </div>
                         </div>
 
-                        @if($page->slug=="home")
+                        @if($page->slug=="index")
                         <div class="col-md-12">
                             <div class="form-actions">
                                 <div class="card-body">

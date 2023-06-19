@@ -85,7 +85,7 @@
                 @endif
 
 
-                @if($page->slug=="about-us")
+                @if($page->slug=="about")
                 <div class="row ">
                     <div class="col-md-6">
                         <div class="form-group">

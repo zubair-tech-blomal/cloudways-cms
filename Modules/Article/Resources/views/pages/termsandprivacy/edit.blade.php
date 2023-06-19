@@ -133,7 +133,7 @@
                             </div>
                         </div>
 
-                        @if($page->slug=="home")
+                        @if($page->slug=="index")
                         <div class="col-md-12">
                             <div class="form-actions">
                                 <div class="card-body">

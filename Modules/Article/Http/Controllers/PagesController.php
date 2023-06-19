@@ -338,7 +338,7 @@ class PagesController extends Controller
             return redirect()->route('admin.pages.index');
         }
         // return $page->slug;
-        if ($page->slug == "about-us") {
+        if ($page->slug == "about") {
             $request->validate([
                 'title'  => 'required|max:100',
                 // 'slug'  => 'required|max:100|unique:pages,slug,' . $page->id,
@@ -372,7 +372,7 @@ class PagesController extends Controller
             ]);
         }
 
-        if ($page->slug == "home" || $page->slug == "investment" ||  $page->slug == "faqs" || $page->slug == "terms" || $page->slug=="privacy" || $page->slug=="disclosure_policy") {
+        if ($page->slug == "index" || $page->slug == "investment" ||  $page->slug == "faqs" || $page->slug == "terms" || $page->slug=="privacy" || $page->slug=="disclosure_policy") {
             $request->validate([
                 'title'  => 'required|max:100',
             ]);
@@ -390,7 +390,7 @@ class PagesController extends Controller
                 $page->banner_description_ar = $request->banner_description_ar;
 
                 $page->status = $request->status;
-                if ($page->slug == "about-us") {
+                if ($page->slug == "about") {
                     $page->description = $request->description;
                     $page->who_we_are_ar = $request->who_we_are_ar;
 

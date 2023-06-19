@@ -499,8 +499,8 @@ INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
 (4, 'App\\Models\\Admin', 1);
 
 INSERT INTO `pages` (`id`, `title`, `slug`, `description`, `meta_description`, `image`, `banner_image`, `category_id`, `article_type_id`, `status`, `deleted_at`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`) VALUES
-(1, 'About Us', 'about-us', '<div>Welcome to our about us page <br /></div>', NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2021-09-14 15:59:43', '2021-09-14 15:59:43'),
-(2, 'Contact Us', 'contact-us', '<div>Welcome to our contact us page <br /></div>', NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2021-09-14 15:59:43', '2021-09-14 15:59:43');
+(1, 'About Us', 'about', '<div>Welcome to our about us page <br /></div>', NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2021-09-14 15:59:43', '2021-09-14 15:59:43'),
+(2, 'Contact Us', 'contact', '<div>Welcome to our contact us page <br /></div>', NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2021-09-14 15:59:43', '2021-09-14 15:59:43');
 
 INSERT INTO `permissions` (`id`, `name`, `guard_name`, `group_name`, `created_at`, `updated_at`) VALUES
 (1, 'dashboard.view', 'admin', 'dashboard', '2021-09-14 15:59:37', '2021-09-14 15:59:37'),

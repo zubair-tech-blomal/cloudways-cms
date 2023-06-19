@@ -16,13 +16,13 @@ class PageTableSeeder extends Seeder
     {
         $page = new Page();
         $page->title = "About Us";
-        $page->slug = "about-us";
+        $page->slug = "about";
         $page->description = "<div>Welcome to our about us page <br /></div>";
         $page->save();
 
         $page = new Page();
         $page->title = "Contact Us";
-        $page->slug = "contact-us";
+        $page->slug = "contact";
         $page->description = "<div>Welcome to our contact us page <br /></div>";
         $page->save();
     }

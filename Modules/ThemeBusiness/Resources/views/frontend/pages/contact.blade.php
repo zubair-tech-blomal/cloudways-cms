@@ -6,7 +6,7 @@
 
 @section('main-content')
     @php
-        $contact_page = \Modules\Article\Entities\Page::where('slug', 'contact-us')->first();
+        $contact_page = \Modules\Article\Entities\Page::where('slug', 'contact')->first();
     @endphp
 
     <div role="main" class="main">
