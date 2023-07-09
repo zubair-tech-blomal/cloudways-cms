@@ -22,10 +22,6 @@ class GeneralSettings extends Settings
 
     public ?string $meta_author;
 
-    public ?string $footer_en;
-
-    public ?string $footer_ar;
-
     public static function group(): string
     {
         return 'general';

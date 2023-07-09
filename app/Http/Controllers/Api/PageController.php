@@ -28,6 +28,7 @@ class PageController extends Controller
         $terms = "";
         $privacy = "";
         $disclosure_policy = "";
+        $footer = "";
 
         $lang = $request->input('lang') == 'ar' ? 'ar' : 'en';
         $slug = $request->input('slug');
@@ -45,6 +46,9 @@ class PageController extends Controller
                     $our_mission = $page->our_mission_ar;
                     $our_vision = $page->our_vision_ar;
                 }
+                else if ($slug == "footer") {
+                    $description = $page->footer_ar;
+                }
                 $meta_description = $page->meta_description_ar;
             } else {
                 $banner_title = $page->banner_title_en;
@@ -55,6 +59,8 @@ class PageController extends Controller
                 if ($slug == "about") {
                     $our_mission = $page->our_mission_en;
                     $our_vision = $page->our_vision_en;
+                } else if ($slug == "footer") {
+                    $description = $page->description;
                 }
             }
             if ($slug == 'index') {
@@ -116,7 +122,7 @@ class PageController extends Controller
                 'terms' => $terms,
                 'privacy' => $privacy,
                 'disclosure_policy' => $disclosure_policy,
-                'meta_description' => $meta_description
+                'meta_description' => $meta_description,
             ];
 
             return response()->json($response_details, 200);

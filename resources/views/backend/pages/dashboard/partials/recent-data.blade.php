@@ -25,7 +25,8 @@
                                     {{ App\Helpers\StringHelper::stripTags($page->description, 0, 100) .'...' }}
                                 </span>
                                 <div class="comment-footer">
-                                    <span class="text-muted float-right">{{ $page->updated_at->diffForHumans() }}</span>
+                                    {{-- <span class="text-muted float-right">{{ $page->updated_at->diffForHumans() }}</span> --}}
+                                    <span class="text-muted float-right">{{\Carbon\Carbon::parse($page->updated_at)->diffForHumans() }}</span>
 
                                     <span class="label label-rounded {{ $page->status === 1 ? 'label-primary' : 'label-warning' }}">
                                         {{ $page->status === 1 ? 'Published' : 'Pending' }}

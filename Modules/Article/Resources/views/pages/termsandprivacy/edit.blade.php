@@ -109,6 +109,34 @@
                     </div>
                     @endif
 
+                    @if($page->slug=="footer")
+
+                    <div class="row ">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label" for="disclosure_policy_en">Footer (en) <span
+                                        class="required">*</span></label>
+                                <textarea type="text" class="form-control" id="description"
+                                    name="description" value="{{ old('description') }}"
+                                    required="">{{ $page->description }}</textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label" for="disclosure_policy_ar">Footer (ar) <span
+                                        class="required">*</span></label>
+                                <textarea type="text" class="form-control" id="footer_ar"
+                                    name="footer_ar" value="{{ old('footer_ar') }}"
+                                    required="">{{ $page->footer_ar }}</textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                    @endif
+
                     <div class="row ">
 
 

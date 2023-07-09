@@ -41,7 +41,7 @@
             <textarea class="form-control" rows="2" id="working_day_hours" name="working_day_hours" placeholder="Site working day hours text">{{ $settings->contact->working_day_hours }}</textarea>
         </div>
     </div>
-    <div class="col-md-6">
+    {{-- <div class="col-md-6">
         <div class="form-group">
             <label class="control-label" for="contact_us_en">Contact US (en) </label>
             <textarea class="form-control" rows="2" id="contact_us_en" name="contact_us_en" placeholder="Contact us message">{{ $settings->contact->contact_us_en }}</textarea>
@@ -53,7 +53,7 @@
             <label class="control-label" for="contact_us_ar">Contact US (ar) </label>
             <textarea class="form-control" rows="2" id="contact_us_ar" name="contact_us_ar" placeholder="اتصل بنا">{{ $settings->contact->contact_us_ar }}</textarea>
         </div>
-    </div>
+    </div> --}}
 
     <div class="col-md-4">
         <div class="form-group">

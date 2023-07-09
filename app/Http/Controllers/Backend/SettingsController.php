@@ -68,8 +68,7 @@ class SettingsController extends Controller
             $this->general->meta_keywords    = $request->meta_keywords;
             $this->general->meta_description = $request->meta_description;
             $this->general->meta_author      = $request->meta_author;
-            $this->general->footer_en        = $request->footer_en;
-            $this->general->footer_ar        = $request->footer_ar;
+           
             $this->general->save();
 
             // Contact settings update.

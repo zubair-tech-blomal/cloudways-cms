@@ -73,20 +73,4 @@
             <textarea class="form-control" rows="3" id="meta_description" name="meta_description">{{ $settings->general->meta_description }}</textarea>
         </div>
     </div>
-    <div class="col-md-6">
-        <div class="form-group">
-            <label class="control-label" for="footer_en">
-                Footer (en)
-            </label>
-            <textarea class="form-control" rows="3" id="footer_en" name="footer_en">{{ $settings->general->footer_en }}</textarea>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="form-group">
-            <label class="control-label" for="footer_ar">
-                Footer (ar)
-            </label>
-            <textarea class="form-control" rows="3" id="footer_ar" name="footer_ar">{{ $settings->general->footer_ar }}</textarea>
-        </div>
-    </div>
-</div>
+ </div>

@@ -278,7 +278,7 @@ class PagesController extends Controller
         }
         $page = Page::find($id);
         $categories = DB::table('categories')->select('id', 'name')->get();
-        if($page->slug=="terms" || $page->slug=="privacy" || $page->slug=="disclosure_policy")
+        if($page->slug=="terms" || $page->slug=="privacy" || $page->slug=="disclosure_policy" || $page->slug=="footer")
         {
             return view('article::pages.termsandprivacy.show', compact('categories', 'page'));
         }
@@ -301,7 +301,7 @@ class PagesController extends Controller
         $page = Page::find($id);
         $categories = Category::printCategory($page->category_id);
         $article_types = ArticleType::all();
-        if($page->slug=="terms" || $page->slug=="privacy" || $page->slug=="disclosure_policy")
+        if($page->slug=="terms" || $page->slug=="privacy" || $page->slug=="disclosure_policy" || $page->slug=="footer")
         {
            
             return view('article::pages.termsandprivacy.edit', compact('categories', 'page', 'article_types'));
@@ -372,6 +372,13 @@ class PagesController extends Controller
             ]);
         }
 
+        if ($page->slug == "footer") {
+            $request->validate([
+                'description'  => 'required',
+                'footer_ar'  => 'required',
+            ]);
+        }
+
         if ($page->slug == "index" || $page->slug == "investment" ||  $page->slug == "faqs" || $page->slug == "terms" || $page->slug=="privacy" || $page->slug=="disclosure_policy") {
             $request->validate([
                 'title'  => 'required|max:100',
@@ -418,6 +425,10 @@ class PagesController extends Controller
                 else if ($page->slug == "disclosure_policy") {
                     $page->disclosure_policy_en = $request->disclosure_policy_en;
                     $page->disclosure_policy_ar = $request->disclosure_policy_ar;
+                }
+                else if ($page->slug == "footer") {
+                    $page->description = $request->description;
+                    $page->footer_ar = $request->footer_ar;
                 }
 
                 $page->meta_description = $request->meta_description;

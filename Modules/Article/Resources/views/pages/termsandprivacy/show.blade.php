@@ -83,6 +83,25 @@
                 </div>
                 @endif
 
+                @if($page->slug=="footer")    
+                <div class="row ">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label" for="description">Footer (en)</label>
+                            <br>
+                            <div>{!! $page->description !!}</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label" for="disclosure_policy_ar">Footer (ar)</label>
+                            <br>
+                            <div dir="rtl" class="float-right">{!! $page->footer_ar !!}</div>
+                        </div>
+                    </div>
+                </div>
+                @endif
+
             </div>
 
 
