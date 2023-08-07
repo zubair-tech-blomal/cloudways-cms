@@ -23,10 +23,10 @@ class FaqController extends Controller
         $question = $request->lang == 'ar' ? 'question_ar' : 'question_en';
 
 
-        $faq = Faq::orderBy('id', 'asc')
-            ->where('deleted_at', null)
+        $faq = Faq::where('deleted_at', null)
             ->where('status', 1)
             ->where($question, 'LIKE', "%{$searchText}%")
+            ->orderBy('sort', 'ASC')
             ->get();
         if ($faq->count() === 0) {
             return response()->json(['status' => 0, 'data' => 'Resource not found'], 404);
