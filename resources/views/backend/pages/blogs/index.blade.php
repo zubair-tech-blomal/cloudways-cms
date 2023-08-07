@@ -17,6 +17,7 @@
                         <th>Question</th>
                         {{-- <th>Featured Image</th> --}}
                         <th>Status</th>
+                        <th>Display # (Website)</th>
                         <th width="100">Action</th>
                     </tr>
                 </thead>
@@ -42,6 +43,7 @@
             {data: 'question_en', name: 'question_en'},
             // {data: 'image', name: 'image'},
             {data: 'status', name: 'status'},
+            {data: 'sort', name: 'sort'},
             {data: 'action', name: 'action'}
         ]
     });

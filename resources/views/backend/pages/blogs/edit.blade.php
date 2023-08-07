@@ -80,6 +80,16 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                                <label class="control-label" for="sort">Website Display Sequence (Sorting)</label>
+                                <select class="form-control custom-select" id="sort" name="sort">
+                                    @foreach (range(0, 25) as $item) {
+                                        <option value="{{$item}}" {{ $blog->sort === $item ? 'selected' : null }}>{{$item}}</option>
+                                    }@endforeach
+                                </select>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="row ">

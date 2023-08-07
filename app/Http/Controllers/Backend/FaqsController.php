@@ -194,6 +194,7 @@ class FaqsController extends Controller
             $faq->answer_en = $request->answer_en;
             $faq->question_ar = $request->question_ar;
             $faq->answer_ar = $request->answer_ar;
+            $faq->sort = $request->sort;
 
             if ($request->slug) {
                 $faq->slug = $request->slug;
@@ -282,9 +283,7 @@ class FaqsController extends Controller
             $faq->question_ar = $request->question_ar;
             $faq->answer_ar = $request->answer_ar;
             $faq->status = $request->status;
-
-            $faq->status = $request->status;
-
+            $faq->sort = $request->sort;
             $faq->updated_by = Auth::id();
             $faq->updated_at = Carbon::now();
             $faq->save();
