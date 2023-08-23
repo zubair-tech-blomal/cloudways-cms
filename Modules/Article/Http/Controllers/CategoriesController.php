@@ -142,7 +142,7 @@ class CategoriesController extends Controller
                 })
                 ->editColumn('logo_image', function ($row) {
                     if ($row->logo_image != null) {
-                        return "<img src='" . asset('public/assets/images/categories/' . $row->logo_image) . "' class='img img-display-list' />";
+                        return "<img src='/public/assets/images/categories/$row->logo_image') . ' class='img img-display-list' />";
                     }
                     return '-';
                 })
