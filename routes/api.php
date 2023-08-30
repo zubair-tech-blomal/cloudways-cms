@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\PageController;
 use App\Http\Controllers\Api\FaqController;
+use App\Http\Controllers\Api\ContactController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::apiResource('article', PageController::class);
 Route::apiResource('faq', FaqController::class);
+Route::apiResource('contact', ContactController::class);
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
