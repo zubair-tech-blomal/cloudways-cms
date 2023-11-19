@@ -34,7 +34,7 @@
                         <li class="sidebar-item">
                             <a href="{{ route('admin.admins.index') }}" class="sidebar-link {{ (Route::is('admin.admins.index') || Route::is('admin.admins.edit')) ? 'active' : null }}">
                                 <i class="mdi mdi-view-list"></i>
-                                <span class="hide-menu"> User List </span>
+                                <span class="hide-menu">User List </span>
                             </a>
                         </li>
                         @endcan

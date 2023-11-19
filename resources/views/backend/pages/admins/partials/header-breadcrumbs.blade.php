@@ -3,7 +3,7 @@
         <div class="col-5 align-self-center">
             <h4 class="page-title">
                 @if (Route::is('admin.admins.index'))
-                    User List
+                    Blomal User List
                 @elseif(Route::is('admin.admins.create'))
                     Create New User
                 @elseif(Route::is('admin.admins.edit'))
@@ -19,12 +19,12 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Home</a></li>
                         @if (Route::is('admin.admins.index'))
-                            <li class="breadcrumb-item active" aria-current="page">User List</li>
+                            <li class="breadcrumb-item active" aria-current="page">Blomal User List</li>
                         @elseif(Route::is('admin.admins.create'))
-                        <li class="breadcrumb-item"><a href="{{ route('admin.admins.index') }}">User List</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('admin.admins.index') }}">Blomal User List</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Create New User</li>
                         @elseif(Route::is('admin.admins.edit'))
-                        <li class="breadcrumb-item"><a href="{{ route('admin.admins.index') }}">User List</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('admin.admins.index') }}">Blomal User List</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Edit User</li>
                         @elseif(Route::is('admin.admins.profile.edit'))
                         <li class="breadcrumb-item active" aria-current="page">Edit Profile</li>
